@@ -1,0 +1,10 @@
+{
+  "parts":[
+    {
+      "name": "drag-and-drop",
+      "client_hooks": {
+        "aceInitInnerdocbodyHead": "ep_drag-and-drop/static/js/main:aceInitInnerdocbodyHead"
+      }
+    }
+  ]
+}
