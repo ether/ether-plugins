@@ -1,0 +1,26 @@
+{
+  "name": "ep_hide_line_numbers",
+  "version": "0.0.1",
+  "keywords": [
+    "line",
+    "numbers",
+    "hide",
+    "default"
+  ],
+  "description": "Don't show line numbers by default",
+  "contributors": [
+    {
+      "name": "John McLear",
+      "email": "john@mclear.co.uk",
+      "url": "http://mclear.co.uk"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ether/ep_hide_line_numbers.git"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
