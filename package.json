@@ -12,8 +12,5 @@
     "url": "http://mclear.co.uk"
   },
   "contributors": [],
-  "dependencies": {},
-  "engines": {
-    "node": ">= 0.4.1 < 0.7.0"
-  }
+  "dependencies": {}
 }
