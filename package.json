@@ -1,0 +1,14 @@
+{
+  "author": {
+    "name": "johnyma22",
+    "email": "john@mclear.co.uk",
+    "url": "John McLear"
+  },
+  "bundleDependencies": false,
+  "contributors": [],
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Disable Error messages to clients in Etherpad",
+  "name": "ep_disable_error_messages",
+  "version": "0.0.2"
+}
