@@ -6,7 +6,7 @@
       "hooks": {},
       "client_hooks": {
         "documentReady": "ep_disable_error_messages/static/js/disable_error_messages:suppress",
-         "postAceInit":"ep_disble_error_messages/static/js/disable_error_messages:postAceInit",
+         "postAceInit":"ep_disble_error_messages/static/js/disable_error_messages:postAceInit"
       }
     }
   ]
