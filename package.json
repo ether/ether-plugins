@@ -1,0 +1,19 @@
+{
+  "name": "ep_headerauth",
+  "version": "1.0.0",
+  "description": "Etherpad plugin to use a reverse proxy's HTTP headers for authentication.",
+  "keywords": [
+    "etherpad"
+  ],
+  "homepage": "https://github.com/rhansen/ep_headerauth#readme",
+  "bugs": {
+    "url": "https://github.com/rhansen/ep_headerauth/issues"
+  },
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rhansen/ep_headerauth.git"
+  },
+  "dependencies": {}
+}
