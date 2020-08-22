@@ -1,7 +1,7 @@
 {
   "name": "ep_disable_reset_authorship_colours",
   "description": "Disable The reset authorship colours button",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "repository": {
     "type": "git",
     "url": "https://github.com/JohnMcLear/ep_disable_reset_authorship_colours"
