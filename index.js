@@ -12,8 +12,8 @@
 // implied. See the License for the specific language governing
 // permissions and limitations under the License.
 
-var settings = require('ep_etherpad-lite/node/utils/Settings');
-var authorManager = require('ep_etherpad-lite/node/db/AuthorManager');
+const settings = require('ep_etherpad-lite/node/utils/Settings');
+const authorManager = require('ep_etherpad-lite/node/db/AuthorManager');
 
 exports.authenticate = function(hook_name, ctx, cb) {
   console.debug('ep_headerauth.authenticate');
@@ -21,11 +21,11 @@ exports.authenticate = function(hook_name, ctx, cb) {
     console.warn(`ep_headerauth.authenticate: Failed authentication from IP ${ctx.req.ip} - trustProxy is not enabled`);
     return cb([false]);
   }
-  var username_hdr = settings.headerauth.username_header;
-  var username = ctx.req.headers[username_hdr];
+  const username_hdr = settings.headerauth.username_header;
+  const username = ctx.req.headers[username_hdr];
   if (!username) {
     console.warn(`ep_headerauth.authenticate: Failed authentication from IP ${ctx.req.ip} - missing ${username_hdr} header`);
-    for (var hdr in ctx.req.headers) {
+    for (const hdr in ctx.req.headers) {
       console.debug(`ep_headerauth.authenticate: Header: ${hdr}: ${ctx.req.headers[hdr]}`);
     }
     return cb([false]);
@@ -34,7 +34,7 @@ exports.authenticate = function(hook_name, ctx, cb) {
   if (!(username in settings.users)) settings.users[username] = {};
   settings.users[username].username = username;
   ctx.req.session.user = settings.users[username];
-  var displayname = ctx.req.headers[settings.headerauth.displayname_header];
+  const displayname = ctx.req.headers[settings.headerauth.displayname_header];
   if (displayname) {
     console.info(`ep_headerauth.authenticate: User ${username} has display name ${displayname}`);
     ctx.req.session.user.displayname = displayname;
@@ -53,19 +53,19 @@ exports.expressConfigure = function(hook_name, ctx, cb) {
 
 exports.handleMessage = async function(hook_name, ctx) {
   console.debug('ep_headerauth.handleMessage');
-  var session = ctx.client.client.request.session;
+  const session = ctx.client.client.request.session;
   if (!('user' in session)) {
     console.debug('ep_headerauth.handleMessage: user info missing from session');
     return;
   }
-  var displayname = session.user.displayname;
+  const displayname = session.user.displayname;
   if (!displayname) {
     return;
   }
   if (ctx.message.type === 'COLLABROOM' && ctx.message.data.type === 'USERINFO_UPDATE') {
-    var get = (x, k, d) => { if (!(k in x)) return d; return x[k]; };
-    var userinfo = get(get(get(ctx, 'message', {}), 'data', {}), 'userInfo', {});
-    var wantname = userinfo.name;
+    const get = (x, k, d) => { if (!(k in x)) return d; return x[k]; };
+    const userinfo = get(get(get(ctx, 'message', {}), 'data', {}), 'userInfo', {});
+    const wantname = userinfo.name;
     console.debug(`ep_headerauth.handleMessage: overriding user's chosen name (${wantname}) with ${displayname}`);
     userinfo.name = displayname;
     return;
@@ -73,13 +73,13 @@ exports.handleMessage = async function(hook_name, ctx) {
   if (ctx.message.type !== 'CLIENT_READY') {
     return;
   }
-  var token = ctx.message.token;
+  const token = ctx.message.token;
   if (!token) {
     console.debug('ep_headerauth.handleMessage: token missing from CLIENT_READY message');
     return;
   }
   console.debug(`ep_headerauth.handleMessage: getting author ID for token ${token}`);
-  var author_id = await authorManager.getAuthor4Token(token);
+  const author_id = await authorManager.getAuthor4Token(token);
   console.debug(`ep_headerauth.handleMessage: Setting name for ${author_id} to ${displayname}`);
   authorManager.setAuthorName(author_id, displayname);
 };
