@@ -62,9 +62,11 @@ exports.handleMessage = async (hook_name, {client: {client: {request: {session}}
     return;
   }
   if (message.type === 'COLLABROOM' && message.data.type === 'USERINFO_UPDATE') {
-    const {data: {userInfo = {}} = {}} = message;
-    console.debug(`ep_headerauth.handleMessage: overriding user's chosen name (${userInfo.name}) with ${displayname}`);
-    userInfo.name = displayname;
+    const {data: {userInfo} = {}} = message;
+    if (userInfo && userInfo.name !== displayname) {
+      console.debug(`ep_headerauth.handleMessage: overriding user's chosen name (${userInfo.name}) with ${displayname}`);
+      userInfo.name = displayname;
+    }
     return;
   }
   if (message.type !== 'CLIENT_READY') {
