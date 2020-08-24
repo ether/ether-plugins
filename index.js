@@ -15,7 +15,7 @@
 const settings = require('ep_etherpad-lite/node/utils/Settings');
 const authorManager = require('ep_etherpad-lite/node/db/AuthorManager');
 
-exports.authenticate = function(hook_name, ctx, cb) {
+exports.authenticate = (hook_name, ctx, cb) => {
   console.debug('ep_headerauth.authenticate');
   if (!settings.trustProxy) {
     console.warn(`ep_headerauth.authenticate: Failed authentication from IP ${ctx.req.ip} - trustProxy is not enabled`);
@@ -42,7 +42,7 @@ exports.authenticate = function(hook_name, ctx, cb) {
   return cb([true]);
 };
 
-exports.expressConfigure = function(hook_name, ctx, cb) {
+exports.expressConfigure = (hook_name, ctx, cb) => {
   if (!('headerauth' in settings)) settings.headerauth = {};
   if (!('username_header' in settings.headerauth))
     settings.headerauth.username_header = 'x-authenticated-user';
@@ -51,7 +51,7 @@ exports.expressConfigure = function(hook_name, ctx, cb) {
   return cb();
 };
 
-exports.handleMessage = async function(hook_name, ctx) {
+exports.handleMessage = async (hook_name, ctx) => {
   console.debug('ep_headerauth.handleMessage');
   const session = ctx.client.client.request.session;
   if (!('user' in session)) {
