@@ -15,29 +15,29 @@
 const settings = require('ep_etherpad-lite/node/utils/Settings');
 const authorManager = require('ep_etherpad-lite/node/db/AuthorManager');
 
-exports.authenticate = (hook_name, ctx, cb) => {
+exports.authenticate = (hook_name, {req}, cb) => {
   console.debug('ep_headerauth.authenticate');
   if (!settings.trustProxy) {
-    console.warn(`ep_headerauth.authenticate: Failed authentication from IP ${ctx.req.ip} - trustProxy is not enabled`);
+    console.warn(`ep_headerauth.authenticate: Failed authentication from IP ${req.ip} - trustProxy is not enabled`);
     return cb([false]);
   }
-  const username_hdr = settings.headerauth.username_header;
-  const username = ctx.req.headers[username_hdr];
+  const {username_header} = settings.headerauth;
+  const username = req.headers[username_header];
   if (!username) {
-    console.warn(`ep_headerauth.authenticate: Failed authentication from IP ${ctx.req.ip} - missing ${username_hdr} header`);
-    for (const hdr in ctx.req.headers) {
-      console.debug(`ep_headerauth.authenticate: Header: ${hdr}: ${ctx.req.headers[hdr]}`);
+    console.warn(`ep_headerauth.authenticate: Failed authentication from IP ${req.ip} - missing ${username_header} header`);
+    for (const hdr in req.headers) {
+      console.debug(`ep_headerauth.authenticate: Header: ${hdr}: ${req.headers[hdr]}`);
     }
     return cb([false]);
   }
-  console.info(`ep_headerauth.authenticate: Successful authentication from IP ${ctx.req.ip} for user ${username}`);
+  console.info(`ep_headerauth.authenticate: Successful authentication from IP ${req.ip} for user ${username}`);
   if (!(username in settings.users)) settings.users[username] = {};
   settings.users[username].username = username;
-  ctx.req.session.user = settings.users[username];
-  const displayname = ctx.req.headers[settings.headerauth.displayname_header];
+  req.session.user = settings.users[username];
+  const displayname = req.headers[settings.headerauth.displayname_header];
   if (displayname) {
     console.info(`ep_headerauth.authenticate: User ${username} has display name ${displayname}`);
-    ctx.req.session.user.displayname = displayname;
+    req.session.user.displayname = displayname;
   }
   return cb([true]);
 };
@@ -51,29 +51,26 @@ exports.expressConfigure = (hook_name, ctx, cb) => {
   return cb();
 };
 
-exports.handleMessage = async (hook_name, ctx) => {
+exports.handleMessage = async (hook_name, {client: {client: {request: {session}}}, message}) => {
   console.debug('ep_headerauth.handleMessage');
-  const session = ctx.client.client.request.session;
   if (!('user' in session)) {
     console.debug('ep_headerauth.handleMessage: user info missing from session');
     return;
   }
-  const displayname = session.user.displayname;
+  const {displayname} = session.user;
   if (!displayname) {
     return;
   }
-  if (ctx.message.type === 'COLLABROOM' && ctx.message.data.type === 'USERINFO_UPDATE') {
-    const get = (x, k, d) => { if (!(k in x)) return d; return x[k]; };
-    const userinfo = get(get(get(ctx, 'message', {}), 'data', {}), 'userInfo', {});
-    const wantname = userinfo.name;
-    console.debug(`ep_headerauth.handleMessage: overriding user's chosen name (${wantname}) with ${displayname}`);
-    userinfo.name = displayname;
+  if (message.type === 'COLLABROOM' && message.data.type === 'USERINFO_UPDATE') {
+    const {data: {userInfo = {}} = {}} = message;
+    console.debug(`ep_headerauth.handleMessage: overriding user's chosen name (${userInfo.name}) with ${displayname}`);
+    userInfo.name = displayname;
     return;
   }
-  if (ctx.message.type !== 'CLIENT_READY') {
+  if (message.type !== 'CLIENT_READY') {
     return;
   }
-  const token = ctx.message.token;
+  const {token} = message;
   if (!token) {
     console.debug('ep_headerauth.handleMessage: token missing from CLIENT_READY message');
     return;
