@@ -3,9 +3,9 @@
     {
       "name": "ep_headerauth",
       "hooks": {
-        "authenticate" : "ep_headerauth/index",
-        "expressConfigure" : "ep_headerauth/index",
-        "handleMessage": "ep_headerauth/index"
+        "authenticate": "ep_headerauth",
+        "expressConfigure": "ep_headerauth",
+        "handleMessage": "ep_headerauth"
       }
     }
   ]
