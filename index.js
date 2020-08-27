@@ -22,7 +22,7 @@ exports.authenticate = (hookName, {req}, cb) => {
   console.debug('ep_headerauth.authenticate');
   if (!settings.trustProxy) {
     console.warn(`ep_headerauth.authenticate: Failed authentication from IP ${req.ip} - trustProxy is not enabled`);
-    return cb([false]);
+    return cb([]);
   }
   const hs = settings.ep_headerauth;
   const username = req.headers[hs.username_header];
@@ -31,7 +31,7 @@ exports.authenticate = (hookName, {req}, cb) => {
     for (const hdr in req.headers) {
       console.debug(`ep_headerauth.authenticate: Header: ${hdr}: ${req.headers[hdr]}`);
     }
-    return cb([false]);
+    return cb([]);
   }
   console.info(`ep_headerauth.authenticate: Successful authentication from IP ${req.ip} for user ${username}`);
   const users = settings.users;
