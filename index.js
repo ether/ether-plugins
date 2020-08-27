@@ -26,7 +26,7 @@ exports.authenticate = (hookName, {req}, cb) => {
   }
   const hs = settings.headerauth;
   const username = req.headers[hs.username_header];
-  if (!username) {
+  if (username == null) {
     console.warn(`ep_headerauth.authenticate: Failed authentication from IP ${req.ip} - missing ${hs.username_header} header`);
     for (const hdr in req.headers) {
       console.debug(`ep_headerauth.authenticate: Header: ${hdr}: ${req.headers[hdr]}`);
@@ -35,11 +35,11 @@ exports.authenticate = (hookName, {req}, cb) => {
   }
   console.info(`ep_headerauth.authenticate: Successful authentication from IP ${req.ip} for user ${username}`);
   const users = settings.users;
-  if (!(username in users)) users[username] = {};
+  if (users[username] == null) users[username] = {};
   users[username].username = username;
   req.session.user = users[username];
   const displayname = req.headers[hs.displayname_header];
-  if (displayname) {
+  if (displayname != null) {
     console.info(`ep_headerauth.authenticate: User ${username} has display name ${displayname}`);
     req.session.user.displayname = displayname;
   }
@@ -48,17 +48,15 @@ exports.authenticate = (hookName, {req}, cb) => {
 
 exports.handleMessage = async (hookName, {client: {client: {request: {session}}}, message}) => {
   console.debug('ep_headerauth.handleMessage');
-  if (!('user' in session)) {
+  if (session.user == null) {
     console.debug('ep_headerauth.handleMessage: user info missing from session');
     return;
   }
   const {displayname} = session.user;
-  if (!displayname) {
-    return;
-  }
+  if (displayname == null) return;
   if (message.type === 'COLLABROOM' && message.data.type === 'USERINFO_UPDATE') {
     const {data: {userInfo} = {}} = message;
-    if (userInfo && userInfo.name !== displayname) {
+    if (userInfo != null && userInfo.name !== displayname) {
       console.debug(`ep_headerauth.handleMessage: overriding user's chosen name (${userInfo.name}) with ${displayname}`);
       userInfo.name = displayname;
     }
@@ -68,7 +66,7 @@ exports.handleMessage = async (hookName, {client: {client: {request: {session}}}
     return;
   }
   const {token} = message;
-  if (!token) {
+  if (token == null) {
     console.debug('ep_headerauth.handleMessage: token missing from CLIENT_READY message');
     return;
   }
@@ -80,9 +78,9 @@ exports.handleMessage = async (hookName, {client: {client: {request: {session}}}
 
 exports.loadSettings = (hookName, {settings: _settings}, cb) => {
   settings = _settings;
-  if (!('headerauth' in settings)) settings.headerauth = {};
+  if (settings.headerauth == null) settings.headerauth = {};
   const hs = settings.headerauth;
-  if (!('username_header' in hs)) hs.username_header = 'x-authenticated-user';
-  if (!('displayname_header' in hs)) hs.displayname_header = 'x-authenticated-name';
+  if (hs.username_header == null) hs.username_header = 'x-authenticated-user';
+  if (hs.displayname_header == null) hs.displayname_header = 'x-authenticated-name';
   return cb();
 };
