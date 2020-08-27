@@ -4,8 +4,8 @@
       "name": "ep_headerauth",
       "hooks": {
         "authenticate": "ep_headerauth",
-        "expressConfigure": "ep_headerauth",
-        "handleMessage": "ep_headerauth"
+        "handleMessage": "ep_headerauth",
+        "loadSettings": "ep_headerauth"
       }
     }
   ]

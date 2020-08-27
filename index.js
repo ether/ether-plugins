@@ -12,8 +12,9 @@
 // implied. See the License for the specific language governing
 // permissions and limitations under the License.
 
-const settings = require('ep_etherpad-lite/node/utils/Settings');
 const authorManager = require('ep_etherpad-lite/node/db/AuthorManager');
+
+let settings;
 
 exports.authenticate = (hookName, {req}, cb) => {
   console.debug('ep_headerauth.authenticate');
@@ -31,24 +32,16 @@ exports.authenticate = (hookName, {req}, cb) => {
     return cb([false]);
   }
   console.info(`ep_headerauth.authenticate: Successful authentication from IP ${req.ip} for user ${username}`);
-  if (!(username in settings.users)) settings.users[username] = {};
-  settings.users[username].username = username;
-  req.session.user = settings.users[username];
-  const displayname = req.headers[settings.headerauth.displayname_header];
+  const users = settings.users;
+  if (!(username in users)) users[username] = {};
+  users[username].username = username;
+  req.session.user = users[username];
+  const displayname = req.headers[hs.displayname_header];
   if (displayname) {
     console.info(`ep_headerauth.authenticate: User ${username} has display name ${displayname}`);
     req.session.user.displayname = displayname;
   }
   return cb([true]);
-};
-
-exports.expressConfigure = (hookName, ctx, cb) => {
-  if (!('headerauth' in settings)) settings.headerauth = {};
-  if (!('username_header' in settings.headerauth))
-    settings.headerauth.username_header = 'x-authenticated-user';
-  if (!('displayname_header' in settings.headerauth))
-    settings.headerauth.displayname_header = 'x-authenticated-name';
-  return cb();
 };
 
 exports.handleMessage = async (hookName, {client: {client: {request: {session}}}, message}) => {
@@ -81,4 +74,13 @@ exports.handleMessage = async (hookName, {client: {client: {request: {session}}}
   const authorId = await authorManager.getAuthor4Token(token);
   console.debug(`ep_headerauth.handleMessage: Setting name for ${authorId} to ${displayname}`);
   authorManager.setAuthorName(authorId, displayname);
+};
+
+exports.loadSettings = (hookName, {settings: _settings}, cb) => {
+  settings = _settings;
+  if (!('headerauth' in settings)) settings.headerauth = {};
+  const hs = settings.headerauth;
+  if (!('username_header' in hs)) hs.username_header = 'x-authenticated-user';
+  if (!('displayname_header' in hs)) hs.displayname_header = 'x-authenticated-name';
+  return cb();
 };
