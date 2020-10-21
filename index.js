@@ -24,7 +24,7 @@ exports.authenticate = (hookName, {req}, cb) => {
     console.warn(`ep_headerauth.authenticate: Failed authentication from IP ${req.ip} - trustProxy is not enabled`);
     return cb([false]);
   }
-  const hs = settings.headerauth;
+  const hs = settings.ep_headerauth;
   const username = req.headers[hs.username_header];
   if (username == null) {
     console.warn(`ep_headerauth.authenticate: Failed authentication from IP ${req.ip} - missing ${hs.username_header} header`);
@@ -78,8 +78,13 @@ exports.handleMessage = async (hookName, {client: {client: {request: {session}}}
 
 exports.loadSettings = (hookName, {settings: _settings}, cb) => {
   settings = _settings;
-  if (settings.headerauth == null) settings.headerauth = {};
-  const hs = settings.headerauth;
+  settings.ep_headerauth = settings.ep_headerauth || settings.headerauth || {};
+  if (settings.headerauth != null) {
+    console.warn('ep_headerauth: The headerauth setting is deprecated; use ep_headerauth instead');
+    console.warn('ep_headerauth: Edit your settings.json and rename headerauth to ep_headerauth');
+    delete settings.headerauth;
+  }
+  const hs = settings.ep_headerauth;
   if (hs.username_header == null) hs.username_header = 'x-authenticated-user';
   if (hs.displayname_header == null) hs.displayname_header = 'x-authenticated-name';
   return cb();
