@@ -21,19 +21,22 @@ let settings;
 exports.authenticate = (hookName, {req}, cb) => {
   console.debug('ep_headerauth.authenticate');
   if (!settings.trustProxy) {
-    console.warn(`ep_headerauth.authenticate: Failed authentication from IP ${req.ip} - trustProxy is not enabled`);
+    console.warn(`ep_headerauth.authenticate: Failed authentication from IP ${req.ip}: ` +
+                 'the trustProxy setting is not enabled');
     return cb([]);
   }
   const hs = settings.ep_headerauth;
   const username = req.headers[hs.username_header];
   if (username == null) {
-    console.warn(`ep_headerauth.authenticate: Failed authentication from IP ${req.ip} - missing ${hs.username_header} header`);
+    console.warn(`ep_headerauth.authenticate: Failed authentication from IP ${req.ip}: ` +
+                 `the ${hs.username_header} header is missing`);
     for (const hdr in req.headers) {
       console.debug(`ep_headerauth.authenticate: Header: ${hdr}: ${req.headers[hdr]}`);
     }
     return cb([]);
   }
-  console.info(`ep_headerauth.authenticate: Successful authentication from IP ${req.ip} for user ${username}`);
+  console.info(`ep_headerauth.authenticate: Successful authentication from IP ${req.ip} ` +
+               `for user ${username}`);
   const users = settings.users;
   if (users[username] == null) users[username] = {};
   users[username].username = username;
@@ -49,7 +52,7 @@ exports.authenticate = (hookName, {req}, cb) => {
 exports.handleMessage = async (hookName, {client: {client: {request: {session}}}, message}) => {
   console.debug('ep_headerauth.handleMessage');
   if (session.user == null) {
-    console.debug('ep_headerauth.handleMessage: user info missing from session');
+    console.debug('ep_headerauth.handleMessage: User info missing from session');
     return;
   }
   const {displayname} = session.user;
@@ -57,7 +60,8 @@ exports.handleMessage = async (hookName, {client: {client: {request: {session}}}
   if (message.type === 'COLLABROOM' && message.data.type === 'USERINFO_UPDATE') {
     const {data: {userInfo} = {}} = message;
     if (userInfo != null && userInfo.name !== displayname) {
-      console.debug(`ep_headerauth.handleMessage: overriding user's chosen name (${userInfo.name}) with ${displayname}`);
+      console.debug('ep_headerauth.handleMessage: Overriding the name chosen by the user ' +
+                    `(${userInfo.name}) with ${displayname}`);
       userInfo.name = displayname;
     }
     return;
