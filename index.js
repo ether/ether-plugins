@@ -15,44 +15,45 @@
 /* global exports, require */
 
 const authorManager = require('ep_etherpad-lite/node/db/AuthorManager');
+const log4js = require('ep_etherpad-lite/node_modules/log4js');
 
+const logger = log4js.getLogger('ep_headerauth');
 let settings;
 
 exports.authenticate = (hookName, {req}, cb) => {
-  console.debug('ep_headerauth.authenticate');
+  logger.debug('authenticate');
   if (!settings.trustProxy) {
-    console.warn(`ep_headerauth.authenticate: Failed authentication from IP ${req.ip}: ` +
-                 'the trustProxy setting is not enabled');
+    logger.warn(`authenticate: Failed authentication from IP ${req.ip}: ` +
+                'the trustProxy setting is not enabled');
     return cb([]);
   }
   const hs = settings.ep_headerauth;
   const username = req.headers[hs.username_header];
   if (username == null) {
-    console.warn(`ep_headerauth.authenticate: Failed authentication from IP ${req.ip}: ` +
-                 `the ${hs.username_header} header is missing`);
+    logger.warn(`authenticate: Failed authentication from IP ${req.ip}: ` +
+                `the ${hs.username_header} header is missing`);
     for (const hdr in req.headers) {
-      console.debug(`ep_headerauth.authenticate: Header: ${hdr}: ${req.headers[hdr]}`);
+      logger.debug(`authenticate: Header: ${hdr}: ${req.headers[hdr]}`);
     }
     return cb([]);
   }
-  console.info(`ep_headerauth.authenticate: Successful authentication from IP ${req.ip} ` +
-               `for user ${username}`);
+  logger.info(`authenticate: Successful authentication from IP ${req.ip} for user ${username}`);
   const users = settings.users;
   if (users[username] == null) users[username] = {};
   users[username].username = username;
   req.session.user = users[username];
   const displayname = req.headers[hs.displayname_header];
   if (displayname != null) {
-    console.info(`ep_headerauth.authenticate: User ${username} has display name ${displayname}`);
+    logger.info(`authenticate: User ${username} has display name ${displayname}`);
     req.session.user.displayname = displayname;
   }
   return cb([true]);
 };
 
 exports.handleMessage = async (hookName, {client: {client: {request: {session}}}, message}) => {
-  console.debug('ep_headerauth.handleMessage');
+  logger.debug('handleMessage');
   if (session.user == null) {
-    console.debug('ep_headerauth.handleMessage: User info missing from session');
+    logger.debug('handleMessage: User info missing from session');
     return;
   }
   const {displayname} = session.user;
@@ -60,8 +61,8 @@ exports.handleMessage = async (hookName, {client: {client: {request: {session}}}
   if (message.type === 'COLLABROOM' && message.data.type === 'USERINFO_UPDATE') {
     const {data: {userInfo} = {}} = message;
     if (userInfo != null && userInfo.name !== displayname) {
-      console.debug('ep_headerauth.handleMessage: Overriding the name chosen by the user ' +
-                    `(${userInfo.name}) with ${displayname}`);
+      logger.debug('handleMessage: Overriding the name chosen by the user ' +
+                   `(${userInfo.name}) with ${displayname}`);
       userInfo.name = displayname;
     }
     return;
@@ -71,12 +72,12 @@ exports.handleMessage = async (hookName, {client: {client: {request: {session}}}
   }
   const {token} = message;
   if (token == null) {
-    console.debug('ep_headerauth.handleMessage: token missing from CLIENT_READY message');
+    logger.debug('handleMessage: token missing from CLIENT_READY message');
     return;
   }
-  console.debug(`ep_headerauth.handleMessage: getting author ID for token ${token}`);
+  logger.debug(`handleMessage: getting author ID for token ${token}`);
   const authorId = await authorManager.getAuthor4Token(token);
-  console.debug(`ep_headerauth.handleMessage: Setting name for ${authorId} to ${displayname}`);
+  logger.debug(`handleMessage: Setting name for ${authorId} to ${displayname}`);
   authorManager.setAuthorName(authorId, displayname);
 };
 
@@ -84,8 +85,8 @@ exports.loadSettings = (hookName, {settings: _settings}, cb) => {
   settings = _settings;
   settings.ep_headerauth = settings.ep_headerauth || settings.headerauth || {};
   if (settings.headerauth != null) {
-    console.warn('ep_headerauth: The headerauth setting is deprecated; use ep_headerauth instead');
-    console.warn('ep_headerauth: Edit your settings.json and rename headerauth to ep_headerauth');
+    logger.warn('The headerauth setting is deprecated; use ep_headerauth instead');
+    logger.warn('Edit your settings.json and rename headerauth to ep_headerauth');
     delete settings.headerauth;
   }
   const hs = settings.ep_headerauth;
