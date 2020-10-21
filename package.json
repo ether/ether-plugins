@@ -5,15 +5,15 @@
   "keywords": [
     "etherpad"
   ],
-  "homepage": "https://github.com/rhansen/ep_headerauth#readme",
+  "homepage": "https://github.com/ether/ep_headerauth#readme",
   "bugs": {
-    "url": "https://github.com/rhansen/ep_headerauth/issues"
+    "url": "https://github.com/ether/ep_headerauth/issues"
   },
   "license": "Apache-2.0",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rhansen/ep_headerauth.git"
+    "url": "https://github.com/ether/ep_headerauth.git"
   },
   "dependencies": {}
 }
