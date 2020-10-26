@@ -1,6 +1,6 @@
 {
   "name": "ep_headerauth",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Etherpad plugin to use a reverse proxy's HTTP headers for authentication.",
   "keywords": [
     "auth",
