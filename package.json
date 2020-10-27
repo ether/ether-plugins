@@ -12,5 +12,9 @@
     "url": "http://mclear.co.uk"
   },
   "contributors": [],
-  "dependencies": {}
+  "dependencies": {},
+  "funding": {
+    "type": "individual",
+    "url": "http://etherpad.org/"
+  }
 }
