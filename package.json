@@ -1,6 +1,6 @@
 {
   "name": "ep_padlist2",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "description": "Etherpad plugin to display a list of pads.",
   "keywords": [
     "ep",
