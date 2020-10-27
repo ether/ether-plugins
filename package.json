@@ -16,5 +16,9 @@
     "url": "http://github.com/ether/ep_padlist2.git"
   },
   "main": "index.js",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "funding": {
+    "type": "individual",
+    "url": "http://etherpad.org/"
+  }
 }
