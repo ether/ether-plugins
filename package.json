@@ -1,5 +1,5 @@
 {
-  "name": "ep_drag-and-drop",
+  "name": "ep_disable_drag_and_drop",
   "description": "Disable Drag and Drop in Etherpad",
   "version": "0.0.8",
   "author": {
@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/johnmclear/ep_drag-and-drop"
+    "url": "https://github.com/johnmclear/ep_disable_drag_and_drop"
   },
   "contributors": [],
   "dependencies": {},
   "engines": {
-    "node": "*"
+    "node": ">=10.13.0"
   },
   "funding": {
     "type": "individual",
