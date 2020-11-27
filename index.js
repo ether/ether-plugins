@@ -12,8 +12,8 @@ exports.expressCreateServer = (hookName, {app}, cb) => {
 };
 
 exports.eejsBlock_indexWrapper = (hookName, context, cb) => {
-  context.content = context.content +
-      '<div style="text-align:center; margin-top:2em;">' +
+  context.content = `${context.content
+  }<div style="text-align:center; margin-top:2em;">` +
       '<a href="list" data-l10n-id="ep_padlist2_index_all-pads">All Pads</a>' +
       '</div>';
   return cb();
