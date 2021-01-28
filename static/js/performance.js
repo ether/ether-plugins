@@ -1,3 +1,5 @@
+'use strict';
+
 exports.postAceInit = () => {
   const perf = {};
   perf.performance = performance;
@@ -13,17 +15,17 @@ exports.postAceInit = () => {
     myAuthorId,
   };
   pad.collabClient.sendMessage(message); // Send the chat position message to the server
-}
+};
 
 
 const getLoadTimes = () => {
-  var resources = performance.getEntriesByType("resource");
-  let data = {};
+  const resources = performance.getEntriesByType('resource');
+  const data = {};
 
-  for (let i=0; i < resources.length; i++) {
+  for (let i = 0; i < resources.length; i++) {
     data[resources[i].name] = {};
     // Redirect time
-    var t = resources[i].redirectEnd - resources[i].redirectStart;
+    let t = resources[i].redirectEnd - resources[i].redirectStart;
     data[resources[i].name].redirectTime = t;
 
     // DNS time
@@ -35,7 +37,9 @@ const getLoadTimes = () => {
     data[resources[i].name].tcpTime = t;
 
     // Secure connection time
-    t = (resources[i].secureConnectionStart > 0) ? (resources[i].connectEnd - resources[i].secureConnectionStart) : "0";
+    t = (resources[i].secureConnectionStart > 0) ? (
+      resources[i].connectEnd - resources[i].secureConnectionStart
+    ) : '0';
     data[resources[i].name].secureConnectionTime = t;
 
     // Response time
@@ -43,38 +47,43 @@ const getLoadTimes = () => {
     data[resources[i].name].responseTime = t;
 
     // Fetch until response end
-    t = (resources[i].fetchStart > 0) ? (resources[i].responseEnd - resources[i].fetchStart) : "0";
+    t = (resources[i].fetchStart > 0)
+      ? (resources[i].responseEnd - resources[i].fetchStart) : '0';
     data[resources[i].name].fetchUntilResponseEndTime = t;
 
     // Request start until response end
-    t = (resources[i].requestStart > 0) ? (resources[i].responseEnd - resources[i].requestStart) : "0";
+    t = (resources[i].requestStart > 0)
+      ? (resources[i].responseEnd - resources[i].requestStart) : '0';
     data[resources[i].name].requestStartUntilResponseEndTime = t;
 
     // Start until response end
-    t = (resources[i].startTime > 0) ? (resources[i].responseEnd - resources[i].startTime) : "0";
+    t = (resources[i].startTime > 0) ? (resources[i].responseEnd - resources[i].startTime) : '0';
     data[resources[i].name].startUntilResponseEndTime = t;
   }
   return data;
-}
+};
 
 const getSizeData = () => {
-  var list = performance.getEntriesByType("resource");
+  const list = performance.getEntriesByType('resource');
   if (list === undefined) {
     return;
   }
-  let data = {};
+  const data = {};
 
   // For each "resource", display its *Size property values
-  for (let i=0; i < list.length; i++) {
+  for (let i = 0; i < list.length; i++) {
     data[list[i].name] = {};
 
-    if ("decodedBodySize" in list[i])
+    if ('decodedBodySize' in list[i]) {
       data[list[i].name].decodedBodySize = list[i].decodedBodySize;
+    }
 
-    if ("encodedBodySize" in list[i])
+    if ('encodedBodySize' in list[i]) {
       data[list[i].name].encodedBodySize = list[i].encodedBodySize;
+    }
 
-    if ("transferSize" in list[i])
+    if ('transferSize' in list[i]) {
       data[list[i].name].transferSize = list[i].transferSize;
+    }
   }
-}
+};
