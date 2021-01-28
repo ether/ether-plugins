@@ -1,0 +1,53 @@
+{
+  "_from": "ep_performance_test_hooks@0.2.20",
+  "_id": "ep_performance_test_hooks@0.2.20",
+  "_inBundle": false,
+  "_integrity": "sha512-LTivdYS7ZIb4yLv8I9zd1okRgMlisClbdH2htA10X9VyYZKvlhsrPKAt2b61eXQjFafuKdu8kIsaaUMwPFvbhg==",
+  "_location": "/ep_performance_test_hooks",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "ep_performance_test_hooks@0.2.20",
+    "name": "ep_performance_test_hooks",
+    "escapedName": "ep_performance_test_hooks",
+    "rawSpec": "0.2.20",
+    "saveSpec": null,
+    "fetchSpec": "0.2.20"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/ep_performance_test_hooks/-/ep_performance_test_hooks-0.2.20.tgz",
+  "_shasum": "373314c5ba95b3038a087a1308b2b5a9bb76a6ab",
+  "_spec": "ep_performance_test_hooks@0.2.20",
+  "_where": "/home/pi/develop",
+  "author": {
+    "name": "John McLear",
+    "email": "john@mclear.co.uk"
+  },
+  "bugs": {
+    "url": "https://github.com/ether/ep_performance_test_hooks/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Etherpad plugin to show performance stats in /stats url",
+  "funding": {
+    "type": "individual",
+    "url": "http://etherpad.org/"
+  },
+  "homepage": "https://github.com/ether/ep_performance_test_hooks#readme",
+  "keywords": [
+    "etherpad",
+    "plugin",
+    "performance",
+    "ep"
+  ],
+  "name": "ep_performance_test_hooks",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ether/ep_performance_test_hooks.git"
+  },
+  "version": "0.2.20"
+}
