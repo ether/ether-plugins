@@ -60,7 +60,6 @@ const getLoadTimes = () => {
 const getSizeData = () => {
   var list = performance.getEntriesByType("resource");
   if (list === undefined) {
-    console.log("= Display Size Data: performance.getEntriesByType() is  NOT supported");
     return;
   }
   let data = {};

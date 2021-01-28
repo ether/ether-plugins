@@ -3,10 +3,8 @@ const stats = require('../../src/node/stats');
 
 const pushStatsToStats = (performanceStats) => {
   const performance = JSON.parse(performanceStats);
-  console.warn("hrm", performance);
   for (const [key, value] of Object.entries(performance)) {
     stats.gauge(key, () => value);
-    console.warn(key,value);
   }
 
 }
