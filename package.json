@@ -5,16 +5,6 @@
   "_integrity": "sha512-LTivdYS7ZIb4yLv8I9zd1okRgMlisClbdH2htA10X9VyYZKvlhsrPKAt2b61eXQjFafuKdu8kIsaaUMwPFvbhg==",
   "_location": "/ep_performance_test_hooks",
   "_phantomChildren": {},
-  "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "ep_performance_test_hooks@0.2.20",
-    "name": "ep_performance_test_hooks",
-    "escapedName": "ep_performance_test_hooks",
-    "rawSpec": "0.2.20",
-    "saveSpec": null,
-    "fetchSpec": "0.2.20"
-  },
   "_requiredBy": [
     "#USER",
     "/"
@@ -49,5 +39,5 @@
     "type": "git",
     "url": "git+https://github.com/ether/ep_performance_test_hooks.git"
   },
-  "version": "0.2.20"
+  "version": "0.0.1"
 }
