@@ -1,0 +1,13 @@
+{
+    "parts": [
+        {
+            "name": "ep_performance_test_hooks",
+            "hooks": {
+                "handleMessage" : "ep_performance_test_hooks/index"
+            },
+            "client_hooks":{
+                "postAceInit" : "ep_performance_test_hooks/static/js/performance"
+            }
+        }
+    ]
+}
