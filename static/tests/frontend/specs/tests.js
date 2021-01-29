@@ -812,36 +812,62 @@ describe('Performance tests', function () {
   it('Gets test data and ensures they are within criteria', async function () {
     this.timeout(60000);
     stats = await getStats();
+    stats.ep_performance_test_hooks.averageSize =
+        getAverage(
+            stats.ep_performance_test_hooks.loadSizes,
+            'transferSize'
+        );
     stats.ep_performance_test_hooks.averageFetchTime =
-        getAverageFetchTime(stats.ep_performance_test_hooks.loadTimes);
+        getAverage(
+            stats.ep_performance_test_hooks.loadTimes,
+            'fetchUntilResponseEndTime'
+        );
     testValues(stats);
   });
 
-  it('Opens a second pad and it should be quicker', async function () {
+  it('Opens a second pad and it should be quicker and use less bandwidth', async function () {
     // Now we have all the initial values, let's bring up a new pad and
     // make sure the new values are lower and/or file size is smaller and/or
     // page load is quicker :)
     const newStats = await getStats();
-    console.log(newStats);
-    const newAverage = getAverageFetchTime(newStats.ep_performance_test_hooks.loadTimes);
-    if (newAverage >= stats.ep_performance_test_hooks.averageFetchTime) {
+    const newLoadAverage = getAverage(
+        newStats.ep_performance_test_hooks.loadTimes,
+        'fetchUntilResponseEndTime'
+    );
+    const newSizeAverage = getAverage(
+        newStats.ep_performance_test_hooks.loadSizes,
+        'transferSize'
+    );
+
+    if (newLoadAverage >= stats.ep_performance_test_hooks.averageFetchTime) {
       throw new Error(
-          `Average fetch time ${newAverage} was not faster than the
+          `Average fetch time ${newLoadAverage} was not faster than the
           first load ${stats.ep_performance_test_hooks.averageFetchTime}`);
     } else {
       // all good, but lets just let console know :)
       console.info(
-          `Average fetch time ${newAverage} of 2nd pad loa dwas faster than the
+          `Average fetch time ${newLoadAverage} of 2nd pad load was faster than the
         first load ${stats.ep_performance_test_hooks.averageFetchTime}`
+      );
+    }
+    if (newSizeAverage >= stats.ep_performance_test_hooks.averageSize) {
+      throw new Error(
+          `Average size ${newSizeAverage} was not smaller than the
+          first load ${stats.ep_performance_test_hooks.averageSize}`);
+    } else {
+      // all good, but lets just let console know :)
+      console.info(
+          `Average size ${newSizeAverage} of 2nd pad load was smaller than the
+        first load ${stats.ep_performance_test_hooks.averageSize}`
       );
     }
   });
 });
 
-const getAverageFetchTime = (stats) => {
+const getAverage = (stats, item) => {
   const items = [];
   for (const [key] of Object.entries(stats)) {
-    items.push(stats[key].fetchUntilResponseEndTime);
+    items.push(stats[key][item]);
   }
   const itemsAvg = items.reduce((p, c) => p + c, 0) / items.length;
   return itemsAvg;
@@ -870,7 +896,7 @@ const testValues = (stats) => {
     if (value > requirement) throw new Error(x);
   }
 
-  // performace from the w3c performance spec
+  // performance from the w3c performance spec
   const start = perf.connectStart;
   for (const [key, value] of Object.entries(perf)) {
     const requirement = requirements.perf[key];
@@ -879,13 +905,14 @@ const testValues = (stats) => {
     if ((requirement > 0) && (valueLessStart > requirement)) throw new Error(x);
   }
 
-  // file/resource timings IE https://whatever.com/pad.css?v1
+  // file/resource timings IE /static/css/pad.css
   for (const [url, values] of Object.entries(loadTimes)) {
     for (const [test, value] of Object.entries(values)) {
       // we multiply here because it's approx the amount of latency
       // that having the iframe for the test runner seems to introduce?
       // I suggest more effort is put into this to validate it's validity
       // as a test.
+      // TODO: Need help here please :)
       const requirement = requirements.loadTimes[url][test] * 7;
       const x = `${url} ${test} too slow with output of ${value}, expected ${requirement}`;
       if ((value >= 100) && (value > requirement)) throw new Error(x);
