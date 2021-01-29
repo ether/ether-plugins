@@ -1,7 +1,17 @@
 'use strict';
+const perf = {};
+perf.etherpadHooks = {};
+
+exports.documentReady = () => perf.etherpadHooks.documentReady = Date.now();
+exports.aceAttribClasses = () => perf.etherpadHooks.aceAttribClasses = Date.now();
+exports.aceEditorCSS = () => perf.etherpadHooks.aceEditorCSS = Date.now();
+exports.aceInitInnerdocbodyHead = () => perf.etherpadHooks.aceInitInnerdocbodyHead = Date.now();
+exports.aceInitialized = () => perf.etherpadHooks.aceInitialized = Date.now();
+exports.postToolbarInit = () => perf.etherpadHooks.postToolbarInit = Date.now();
+exports.postTimesliderInit = () => perf.etherpadHooks.postTimesliderInit = Date.now();
 
 exports.postAceInit = () => {
-  const perf = {};
+  perf.etherpadHooks.postAceInit = Date.now();
   perf.performance = performance;
   perf.loadTimes = getLoadTimes();
   perf.loadSizes = getSizeData();

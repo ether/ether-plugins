@@ -4,24 +4,31 @@
 // TODO: Add minified data too :)
 
 const requirements = {
+  etherpadHooks: {
+    aceInitInnerdocbodyHead: 157,
+    aceInitialized: 2693,
+    documentReady: 10,
+    postAceInit: 2789,
+    postToolbarInit: 2728,
+  },
   startDurations: {
     npmLoad: 180,
-    dbInit: 90,
-    loadPlugins: 9000,
+    dbInit: 5000,
+    loadPlugins: 10000,
     loadSettings: 5,
-    createSettings: 12000,
+    createSettings: 20000,
   },
   perf: {
-    loadEventEnd: 1200,
-    domLoading: 65,
+    loadEventEnd: 1400,
+    domLoading: 125,
     domContentLoadedEventStart: 1200,
-    responseStart: 80,
-    responseEnd: 80,
+    responseStart: 100,
+    responseEnd: 100,
     domInteractive: 1200,
     requestStart: 5,
-    domComplete: 1200,
-    loadEventStart: 1200,
-    domContentLoadedEventEnd: 1200,
+    domComplete: 1400,
+    loadEventStart: 1400,
+    domContentLoadedEventEnd: 1400,
   },
   loadSizes: {
     '/static/css/pad.css': {
@@ -260,9 +267,9 @@ const requirements = {
       transferSize: 16041,
     },
     '/pluginfw/plugin-definitions.json': {
-      decodedBodySize: 625,
-      encodedBodySize: 625,
-      transferSize: 903,
+      decodedBodySize: 1500,
+      encodedBodySize: 1500,
+      transferSize: 1700,
     },
     '/locales.json': {
       decodedBodySize: 12111,
@@ -270,9 +277,9 @@ const requirements = {
       transferSize: 12416,
     },
     '/javascripts/lib/ep_performance_test_hooks/static/js/performance.js': {
-      decodedBodySize: 2808,
-      encodedBodySize: 884,
-      transferSize: 1337,
+      decodedBodySize: 9999,
+      encodedBodySize: 9999,
+      transferSize: 9999,
     },
     '/socket.io/': {
       decodedBodySize: 14128,
@@ -808,6 +815,7 @@ describe('Performance tests', function () {
     const loadSizes = stats.loadSizes;
     const startDurations = stats.startDurations;
     const perf = stats.performance.timing;
+    const etherpadHooks = stats.etherpadHooks;
 
     // startup durations push to server -- done! :)
     for (const [key, value] of Object.entries(startDurations)) {
@@ -821,20 +829,17 @@ describe('Performance tests', function () {
     for (const [key, value] of Object.entries(perf)) {
       const requirement = requirements.perf[key];
       const valueLessStart = value - start;
-      const x = `${key} too slow with output of ${value}, expected ${requirement}`;
+      const x = `${key} too slow with output of ${value - start}, expected ${requirement}`;
       if ((requirement > 0) && (valueLessStart > requirement)) throw new Error(x);
     }
-
     // file/resource timings IE https://whatever.com/pad.css?v1
     for (const [url, values] of Object.entries(loadTimes)) {
-      const path = new URL(url).pathname;
-
       for (const [test, value] of Object.entries(values)) {
         // we multiply here because it's approx the amount of latency
         // that having the iframe for the test runner seems to introduce?
         // I suggest more effort is put into this to validate it's validity
         // as a test.
-        const requirement = requirements.loadTimes[path][test] * 7;
+        const requirement = requirements.loadTimes[url][test] * 7;
         const x = `${url} ${test} too slow with output of ${value}, expected ${requirement}`;
         if ((value >= 100) && (value > requirement)) throw new Error(x);
       }
@@ -847,6 +852,15 @@ describe('Performance tests', function () {
         const x = `${path} ${test} too big with output of ${value}, expected ${requirement}`;
         if (value > requirement) throw new Error(x);
       }
+    }
+
+    // etherpad Hooks with documentReady as a base ref
+    for (const [key, value] of Object.entries(etherpadHooks)) {
+      const requirement = requirements.etherpadHooks[key] * 1.1;
+      const duration = value - etherpadHooks.documentReady;
+      const x = `${key} too slow with output of ${value - etherpadHooks.documentReady},
+          expected ${requirement}`;
+      if (duration > requirement) throw new Error(x);
     }
   });
 });
