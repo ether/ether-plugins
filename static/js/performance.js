@@ -29,7 +29,7 @@ exports.postAceInit = () => {
     perf.etherpadHooksDuration[hook] = time - perf.etherpadHooks.documentReady;
   }
 
-  perf.performance = performance;
+  perf.performance = performance.getEntriesByType('navigation')[0];
   perf.loadTimes = getLoadTimes();
   perf.loadSizes = getSizeData();
   const myAuthorId = pad.getUserId();
@@ -44,14 +44,12 @@ exports.postAceInit = () => {
   pad.collabClient.sendMessage(message); // Send the chat position message to the server
 };
 
-
 const getLoadTimes = () => {
   const resources = performance.getEntriesByType('resource');
   const data = {};
 
   for (let i = 0; i < resources.length; i++) {
     const name = new URL(resources[i].name).pathname;
-
     data[name] = {};
 
     // Redirect time

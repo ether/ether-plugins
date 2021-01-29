@@ -19,15 +19,26 @@ const requirements = {
     createSettings: 20000,
   },
   perf: {
-    loadEventEnd: 2500,
-    domLoading: 125,
-    domContentLoadedEventStart: 1200,
-    responseStart: 100,
-    responseEnd: 100,
-    domInteractive: 1200,
-    domComplete: 1400,
-    loadEventStart: 1400,
-    domContentLoadedEventEnd: 1400,
+    'duration':685.1800000004005,
+    'fetchStart':0.5650000020978041,
+    'domainLookupStart':0.5650000020978041,
+    'domainLookupEnd':0.5650000020978041,
+    'connectStart':0.5650000020978041,
+    'connectEnd':0.5650000020978041,
+    'requestStart':11.395000001357403,
+    'responseStart':67.62499999967986,
+    'responseEnd':72.0949999995355,
+    'transferSize':35141,
+    'encodedBodySize':34843,
+    'decodedBodySize':34843,
+    'unloadEventStart':74.85499999893364,
+    'unloadEventEnd':74.85499999893364,
+    'domInteractive':605.5999999989581,
+    'domContentLoadedEventStart':605.6549999993877,
+    'domContentLoadedEventEnd':607.4699999990116,
+    'domComplete':685.1300000016636,
+    'loadEventStart':685.1700000006531,
+    'loadEventEnd':685.1800000004005,
   },
   loadSizes: {
     '/static/css/pad.css': {
@@ -886,7 +897,7 @@ const testValues = (stats) => {
   const startDurations = stats.startDurations;
   const loadTimes = stats.ep_performance_test_hooks.loadTimes;
   const loadSizes = stats.ep_performance_test_hooks.loadSizes;
-  const perf = stats.ep_performance_test_hooks.performance.timing;
+  const perf = stats.ep_performance_test_hooks.performance;
   const etherpadHooks = stats.ep_performance_test_hooks.etherpadHooks;
 
   // startup durations push to server -- done! :)
@@ -899,9 +910,10 @@ const testValues = (stats) => {
   // performance from the w3c performance spec
   const start = perf.connectStart;
   for (const [key, value] of Object.entries(perf)) {
-    const requirement = requirements.perf[key];
+    const requirement = requirements.perf[key] * 1.1;
     const valueLessStart = value - start;
-    const x = `${key} too slow with output of ${value - start}, expected ${requirement}`;
+    const x = `w3c spec performance: ${key} too slow with output of
+        ${value - start}, expected ${requirement}`;
     if ((requirement > 0) && (valueLessStart > requirement)) throw new Error(x);
   }
 
@@ -914,7 +926,8 @@ const testValues = (stats) => {
       // as a test.
       // TODO: Need help here please :)
       const requirement = requirements.loadTimes[url][test] * 7;
-      const x = `${url} ${test} too slow with output of ${value}, expected ${requirement}`;
+      const x = `file/resource timings: ${url} ${test} too slow with output of
+          ${value}, expected ${requirement}`;
       if ((value >= 100) && (value > requirement)) throw new Error(x);
     }
   }
@@ -923,7 +936,8 @@ const testValues = (stats) => {
   for (const [path, values] of Object.entries(loadSizes)) {
     for (const [test, value] of Object.entries(values)) {
       const requirement = requirements.loadSizes[path][test] * 1.1;
-      const x = `${path} ${test} too big with output of ${value}, expected ${requirement}`;
+      const x = `file/resource size: ${path} ${test} too big with output of
+          ${value}, expected ${requirement}`;
       if (value > requirement) throw new Error(x);
     }
   }
@@ -932,7 +946,7 @@ const testValues = (stats) => {
   for (const [key, value] of Object.entries(etherpadHooks)) {
     const requirement = requirements.etherpadHooks[key] * 1.1;
     const duration = value - etherpadHooks.documentReady;
-    const x = `${key} too slow with output of ${value - etherpadHooks.documentReady},
+    const x = `hook: ${key} too slow with output of ${value - etherpadHooks.documentReady},
         expected ${requirement}`;
     if (duration > requirement) throw new Error(x);
   }
