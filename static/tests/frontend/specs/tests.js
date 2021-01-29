@@ -12,20 +12,19 @@ const requirements = {
     postToolbarInit: 2728,
   },
   startDurations: {
-    npmLoad: 180,
+    npmLoad: 240,
     dbInit: 5000,
     loadPlugins: 10000,
     loadSettings: 5,
     createSettings: 20000,
   },
   perf: {
-    loadEventEnd: 1400,
+    loadEventEnd: 2500,
     domLoading: 125,
     domContentLoadedEventStart: 1200,
     responseStart: 100,
     responseEnd: 100,
     domInteractive: 1200,
-    requestStart: 5,
     domComplete: 1400,
     loadEventStart: 1400,
     domContentLoadedEventEnd: 1400,
@@ -808,66 +807,106 @@ describe('Performance tests', function () {
     this.timeout(60000);
   });
 
+  let stats;
+
   it('Gets test data and ensures they are within criteria', async function () {
     this.timeout(60000);
-    const stats = await getStats();
-    const loadTimes = stats.loadTimes;
-    const loadSizes = stats.loadSizes;
-    const startDurations = stats.startDurations;
-    const perf = stats.performance.timing;
-    const etherpadHooks = stats.etherpadHooks;
+    stats = await getStats();
+    stats.ep_performance_test_hooks.averageFetchTime =
+        getAverageFetchTime(stats.ep_performance_test_hooks.loadTimes);
+    testValues(stats);
+  });
 
-    // startup durations push to server -- done! :)
-    for (const [key, value] of Object.entries(startDurations)) {
-      const requirement = requirements.startDurations[key];
-      const x = `${key} too slow with output of ${value}, expected ${requirement}`;
-      if (value > requirement) throw new Error(x);
-    }
-
-    // performace from the w3c performance spec
-    const start = perf.connectStart;
-    for (const [key, value] of Object.entries(perf)) {
-      const requirement = requirements.perf[key];
-      const valueLessStart = value - start;
-      const x = `${key} too slow with output of ${value - start}, expected ${requirement}`;
-      if ((requirement > 0) && (valueLessStart > requirement)) throw new Error(x);
-    }
-    // file/resource timings IE https://whatever.com/pad.css?v1
-    for (const [url, values] of Object.entries(loadTimes)) {
-      for (const [test, value] of Object.entries(values)) {
-        // we multiply here because it's approx the amount of latency
-        // that having the iframe for the test runner seems to introduce?
-        // I suggest more effort is put into this to validate it's validity
-        // as a test.
-        const requirement = requirements.loadTimes[url][test] * 7;
-        const x = `${url} ${test} too slow with output of ${value}, expected ${requirement}`;
-        if ((value >= 100) && (value > requirement)) throw new Error(x);
-      }
-    }
-
-    // file/resource sizes IE https://whatever.com/pad.css?v1
-    for (const [path, values] of Object.entries(loadSizes)) {
-      for (const [test, value] of Object.entries(values)) {
-        const requirement = requirements.loadSizes[path][test] * 1.1;
-        const x = `${path} ${test} too big with output of ${value}, expected ${requirement}`;
-        if (value > requirement) throw new Error(x);
-      }
-    }
-
-    // etherpad Hooks with documentReady as a base ref
-    for (const [key, value] of Object.entries(etherpadHooks)) {
-      const requirement = requirements.etherpadHooks[key] * 1.1;
-      const duration = value - etherpadHooks.documentReady;
-      const x = `${key} too slow with output of ${value - etherpadHooks.documentReady},
-          expected ${requirement}`;
-      if (duration > requirement) throw new Error(x);
+  it('Opens a second pad and it should be quicker', async function () {
+    // Now we have all the initial values, let's bring up a new pad and
+    // make sure the new values are lower and/or file size is smaller and/or
+    // page load is quicker :)
+    const newStats = await getStats();
+    console.log(newStats);
+    const newAverage = getAverageFetchTime(newStats.ep_performance_test_hooks.loadTimes);
+    if (newAverage >= stats.ep_performance_test_hooks.averageFetchTime) {
+      throw new Error(
+          `Average fetch time ${newAverage} was not faster than the
+          first load ${stats.ep_performance_test_hooks.averageFetchTime}`);
+    } else {
+      // all good, but lets just let console know :)
+      console.info(
+          `Average fetch time ${newAverage} of 2nd pad loa dwas faster than the
+        first load ${stats.ep_performance_test_hooks.averageFetchTime}`
+      );
     }
   });
 });
 
+const getAverageFetchTime = (stats) => {
+  const items = [];
+  for (const [key] of Object.entries(stats)) {
+    items.push(stats[key].fetchUntilResponseEndTime);
+  }
+  const itemsAvg = items.reduce((p, c) => p + c, 0) / items.length;
+  return itemsAvg;
+};
+
 const getStats = () => new Promise(
     (resolve, reject) => {
+      $.ajaxSetup({cache: false});
+      // used to ensure the request is unique
       $.getJSON('/stats', (stats) => {
         resolve(stats);
       });
     });
+
+const testValues = (stats) => {
+  const startDurations = stats.startDurations;
+  const loadTimes = stats.ep_performance_test_hooks.loadTimes;
+  const loadSizes = stats.ep_performance_test_hooks.loadSizes;
+  const perf = stats.ep_performance_test_hooks.performance.timing;
+  const etherpadHooks = stats.ep_performance_test_hooks.etherpadHooks;
+
+  // startup durations push to server -- done! :)
+  for (const [key, value] of Object.entries(startDurations)) {
+    const requirement = requirements.startDurations[key];
+    const x = `${key} too slow with output of ${value}, expected ${requirement}`;
+    if (value > requirement) throw new Error(x);
+  }
+
+  // performace from the w3c performance spec
+  const start = perf.connectStart;
+  for (const [key, value] of Object.entries(perf)) {
+    const requirement = requirements.perf[key];
+    const valueLessStart = value - start;
+    const x = `${key} too slow with output of ${value - start}, expected ${requirement}`;
+    if ((requirement > 0) && (valueLessStart > requirement)) throw new Error(x);
+  }
+
+  // file/resource timings IE https://whatever.com/pad.css?v1
+  for (const [url, values] of Object.entries(loadTimes)) {
+    for (const [test, value] of Object.entries(values)) {
+      // we multiply here because it's approx the amount of latency
+      // that having the iframe for the test runner seems to introduce?
+      // I suggest more effort is put into this to validate it's validity
+      // as a test.
+      const requirement = requirements.loadTimes[url][test] * 7;
+      const x = `${url} ${test} too slow with output of ${value}, expected ${requirement}`;
+      if ((value >= 100) && (value > requirement)) throw new Error(x);
+    }
+  }
+
+  // file/resource sizes IE https://whatever.com/pad.css?v1
+  for (const [path, values] of Object.entries(loadSizes)) {
+    for (const [test, value] of Object.entries(values)) {
+      const requirement = requirements.loadSizes[path][test] * 1.1;
+      const x = `${path} ${test} too big with output of ${value}, expected ${requirement}`;
+      if (value > requirement) throw new Error(x);
+    }
+  }
+
+  // etherpad Hooks with documentReady as a base ref
+  for (const [key, value] of Object.entries(etherpadHooks)) {
+    const requirement = requirements.etherpadHooks[key] * 1.1;
+    const duration = value - etherpadHooks.documentReady;
+    const x = `${key} too slow with output of ${value - etherpadHooks.documentReady},
+        expected ${requirement}`;
+    if (duration > requirement) throw new Error(x);
+  }
+};

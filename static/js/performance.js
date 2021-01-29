@@ -1,17 +1,34 @@
 'use strict';
-const perf = {};
-perf.etherpadHooks = {};
 
-exports.documentReady = () => perf.etherpadHooks.documentReady = Date.now();
-exports.aceAttribClasses = () => perf.etherpadHooks.aceAttribClasses = Date.now();
-exports.aceEditorCSS = () => perf.etherpadHooks.aceEditorCSS = Date.now();
-exports.aceInitInnerdocbodyHead = () => perf.etherpadHooks.aceInitInnerdocbodyHead = Date.now();
-exports.aceInitialized = () => perf.etherpadHooks.aceInitialized = Date.now();
-exports.postToolbarInit = () => perf.etherpadHooks.postToolbarInit = Date.now();
-exports.postTimesliderInit = () => perf.etherpadHooks.postTimesliderInit = Date.now();
+// It's hacky but we use window.top to ensure all the values are in the same namespace
+// TODO: make this less hacky.  Note that my initial solution worked fine when minify
+// was false, it was only when minify was set to true that I needed to do this hack.
+// CRITICAL TODO: This causes a global leak which causes the tests to fail.
+
+exports.documentReady = () => {
+  window.top.etherpadHooks = {};
+  window.top.etherpadHooks.documentReady = Date.now();
+};
+exports.aceAttribClasses = () => window.top.etherpadHooks.aceAttribClasses = Date.now();
+exports.aceEditorCSS = () => window.top.etherpadHooks.aceEditorCSS = Date.now();
+exports.aceInitInnerdocbodyHead =
+    () => window.top.etherpadHooks.aceInitInnerdocbodyHead = Date.now();
+exports.aceInitialized = () => window.top.etherpadHooks.aceInitialized = Date.now();
+exports.postToolbarInit = () => window.top.etherpadHooks.postToolbarInit = Date.now();
+exports.postTimesliderInit = () => window.top.etherpadHooks.postTimesliderInit = Date.now();
 
 exports.postAceInit = () => {
-  perf.etherpadHooks.postAceInit = Date.now();
+  window.top.etherpadHooks.postAceInit = Date.now();
+  const perf = {};
+  perf.etherpadHooks = window.top.etherpadHooks;
+  perf.etherpadHooksDuration = {};
+
+  // Takes previous hook times and stores a duration
+  // This is useful for graphing.
+  for (const [hook, time] of Object.entries(perf.etherpadHooks)) {
+    perf.etherpadHooksDuration[hook] = perf.etherpadHooks.postAceInit - time;
+  }
+
   perf.performance = performance;
   perf.loadTimes = getLoadTimes();
   perf.loadSizes = getSizeData();

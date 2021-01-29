@@ -1,13 +1,8 @@
 'use strict';
 
 const stats = require('ep_etherpad-lite/node/stats');
-
-const pushStatsToStats = (performanceStats) => {
-  const performance = JSON.parse(performanceStats);
-  for (const [key, value] of Object.entries(performance)) {
-    stats.gauge(key, () => value);
-  }
-};
+let performance = {};
+stats.gauge('ep_performance_test_hooks', () => performance);
 
 /*
 * Handle incoming stats
@@ -26,7 +21,7 @@ exports.handleMessage = async (hookName, context) => {
   if (!isStats) {
     return false;
   } else {
-    pushStatsToStats(context.message.data.message);
+    performance = JSON.parse(context.message.data.message);
     return true;
   }
 };
