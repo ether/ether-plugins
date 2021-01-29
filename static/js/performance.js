@@ -26,7 +26,7 @@ exports.postAceInit = () => {
   // Takes previous hook times and stores a duration
   // This is useful for graphing.
   for (const [hook, time] of Object.entries(perf.etherpadHooks)) {
-    perf.etherpadHooksDuration[hook] = perf.etherpadHooks.postAceInit - time;
+    perf.etherpadHooksDuration[hook] = time - perf.etherpadHooks.documentReady;
   }
 
   perf.performance = performance;
