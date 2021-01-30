@@ -19,7 +19,7 @@ const requirements = {
     createSettings: 20000,
   },
   perf: {
-    duration: 685.1800000004005,
+    duration: 1200,
     fetchStart: 0.5650000020978041,
     domainLookupStart: 0.5650000020978041,
     domainLookupEnd: 0.5650000020978041,
