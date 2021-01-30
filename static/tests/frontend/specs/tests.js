@@ -908,6 +908,7 @@ const testValues = (stats) => {
   }
 
   // performance from the w3c performance spec
+  if (!perf.connectStart) throw new Error('no connectStart value available');
   const start = perf.connectStart;
   for (const [key, value] of Object.entries(perf)) {
     const requirement = requirements.perf[key] * 1.1;
