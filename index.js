@@ -22,6 +22,6 @@ exports.handleMessage = async (hookName, context) => {
     return false;
   } else {
     performance = JSON.parse(context.message.data.message);
-    return true;
+    return null;
   }
 };
