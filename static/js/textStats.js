@@ -3,7 +3,6 @@
 // 1:1 API Fork of TextStatistics.php by Dave Child (Thanks mate!)
 // https://github.com/DaveChild/Text-Statistics
 
-
 (function (glob) {
   function cleanText(text) {
     // all these tags should be preceeded by a full stop.
