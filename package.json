@@ -36,7 +36,7 @@
     "lint:fix": "eslint --fix ."
   },
   "engines": {
-    "node": ">=10.13.0"
+    "node": ">=10.17.1"
   },
   "peerDependencies": {
     "ep_etherpad-lite": ">=1.8.6"
