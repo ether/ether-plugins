@@ -1,3 +1,5 @@
+![Publish Status](https://github.com/ether/ep_padlist2/workflows/Node.js%20Package/badge.svg) ![Backend Tests Status](https://github.com/ether/ep_padlist2/workflows/Backend%20tests/badge.svg)
+
 ## ep_padlist2
 
 [Etherpad](https://etherpad.org/) plugin to display a list of all
