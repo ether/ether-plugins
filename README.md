@@ -1,3 +1,5 @@
+![Publish Status](https://github.com/ether/ep_headerauth/workflows/Node.js%20Package/badge.svg) ![Backend Tests Status](https://github.com/ether/ep_headerauth/workflows/Backend%20tests/badge.svg)
+
 # `ep_headerauth`
 
 Etherpad plugin to use a reverse proxy's HTTP headers for authentication.
