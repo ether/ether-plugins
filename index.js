@@ -1,3 +1,5 @@
+'use strict';
+
 // Copyright 2020 Richard Hansen
 //
 // Licensed under the Apache License, Version 2.0 (the "License"); you
@@ -11,8 +13,6 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
 // implied. See the License for the specific language governing
 // permissions and limitations under the License.
-
-/* global exports, require */
 
 const authorManager = require('ep_etherpad-lite/node/db/AuthorManager');
 const log4js = require('ep_etherpad-lite/node_modules/log4js');
@@ -32,7 +32,7 @@ exports.authenticate = (hookName, {req}, cb) => {
   if (username == null) {
     logger.warn(`authenticate: Failed authentication from IP ${req.ip}: ` +
                 `the ${hs.username_header} header is missing`);
-    for (const hdr in req.headers) {
+    for (const hdr of Object.keys(req.headers)) {
       logger.debug(`authenticate: Header: ${hdr}: ${req.headers[hdr]}`);
     }
     return cb([]);
