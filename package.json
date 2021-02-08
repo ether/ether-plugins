@@ -10,7 +10,7 @@
   "deprecated": false,
   "description": "Disable Error messages to clients in Etherpad",
   "name": "ep_disable_error_messages",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "funding": {
     "type": "individual",
     "url": "http://etherpad.org/"
