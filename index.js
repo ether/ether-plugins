@@ -1,4 +1,4 @@
-/* global exports, require */
+'use strict';
 
 const eejs = require('ep_etherpad-lite/node/eejs');
 const padManager = require('ep_etherpad-lite/node/db/PadManager');

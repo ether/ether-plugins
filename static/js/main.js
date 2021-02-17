@@ -1,4 +1,4 @@
-/* global $ */
+'use strict';
 
 $(() => {
   const filter = (query) => {
