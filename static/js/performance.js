@@ -30,8 +30,17 @@ exports.postAceInit = () => {
   }
 
   perf.performance = performance.getEntriesByType('navigation')[0];
-  perf.loadTimes = getLoadTimes();
-  perf.loadSizes = getSizeData();
+  perf.loadTimes = {};
+  perf.loadSizes = {};
+  // main window
+  perf.loadTimes.main = getLoadTimes(window.performance.getEntriesByType('resource'));
+  perf.loadSizes.main = getSizeData(performance.getEntriesByType('resource'));
+  // ace_outer
+  perf.loadTimes.outer = getLoadTimes(window[1].performance.getEntriesByType('resource'));
+  perf.loadSizes.outer = getSizeData(window[1].performance.getEntriesByType('resource'));
+  // ace_inner
+  perf.loadTimes.inner = getLoadTimes(window[1].frames[0].performance.getEntriesByType('resource'));
+  perf.loadSizes.inner = getSizeData(window[1].frames[0].performance.getEntriesByType('resource'));
   const myAuthorId = pad.getUserId();
   const padId = pad.getPadId();
   const message = {
@@ -44,8 +53,7 @@ exports.postAceInit = () => {
   pad.collabClient.sendMessage(message); // Send the chat position message to the server
 };
 
-const getLoadTimes = () => {
-  const resources = performance.getEntriesByType('resource');
+const getLoadTimes = (resources) => {
   const data = {};
 
   for (let i = 0; i < resources.length; i++) {
@@ -91,8 +99,7 @@ const getLoadTimes = () => {
   return data;
 };
 
-const getSizeData = () => {
-  const list = performance.getEntriesByType('resource');
+const getSizeData = (list) => {
   if (list === undefined) {
     return;
   }
