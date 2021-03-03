@@ -1,6 +1,6 @@
 'use strict';
 
-exports.aceEditEvent = (name, call, cb) => {
+exports.aceEditEvent = (name, call) => {
   if (!call) return;
   if (!call.callstack.docTextChanged) return false;
   const lines = $('iframe[name="ace_outer"]')
