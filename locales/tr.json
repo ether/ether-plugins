@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Hedda",
 			"MuratTheTurkish"
 		]
 	},
-	"ep_padlist2_index_all-pads": "Tüm Pedler",
-	"ep_padlist2_list_heading": "Pedler",
-	"ep_padlist2_list_page-title": "Pedler",
-	"ep_padlist2_list_search-box.placeholder": "Pedleri ara"
+	"ep_padlist2_index_all-pads": "Tüm Bloknotlar",
+	"ep_padlist2_list_heading": "Bloknotlar",
+	"ep_padlist2_list_page-title": "Bloknotlar",
+	"ep_padlist2_list_search-box.placeholder": "Bloknotları ara"
 }
