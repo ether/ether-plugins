@@ -12,9 +12,8 @@ describe(__filename, function () {
     const alphabet = 'abcdefghijklmnopqrstuvwxyz';
     const charset = `${alphabet}${alphabet.toUpperCase()}0123456789`;
     let ret = '';
-    while (ret.length < len) {
-      ret += charset[Math.floor(Math.random() * charset.length)];
-    }
+    while (ret.length < len) ret += charset[Math.floor(Math.random() * charset.length)];
+    return ret;
   };
 
   const samples = {
