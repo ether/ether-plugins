@@ -40,7 +40,7 @@
     "type": "git",
     "url": "git+https://github.com/ether/ep_performance_test_hooks.git"
   },
-  "version": "0.0.12",
+  "version": "0.0.13",
   "devDependencies": {
     "eslint": "^7.32.0",
     "eslint-config-etherpad": "^2.0.2",
