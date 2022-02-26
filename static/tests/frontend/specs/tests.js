@@ -826,12 +826,12 @@ describe('Performance tests', function () {
     stats.ep_performance_test_hooks.averageSize =
         getAverage(
             stats.ep_performance_test_hooks.loadSizes,
-            'transferSize'
+            'transferSize',
         );
     stats.ep_performance_test_hooks.averageFetchTime =
         getAverage(
             stats.ep_performance_test_hooks.loadTimes,
-            'fetchUntilResponseEndTime'
+            'fetchUntilResponseEndTime',
         );
     testValues(stats);
   });
@@ -843,11 +843,11 @@ describe('Performance tests', function () {
     const newStats = await getStats();
     const newLoadAverage = getAverage(
         newStats.ep_performance_test_hooks.loadTimes,
-        'fetchUntilResponseEndTime'
+        'fetchUntilResponseEndTime',
     );
     const newSizeAverage = getAverage(
         newStats.ep_performance_test_hooks.loadSizes,
-        'transferSize'
+        'transferSize',
     );
 
     if (newLoadAverage >= stats.ep_performance_test_hooks.averageFetchTime) {
@@ -858,7 +858,7 @@ describe('Performance tests', function () {
       // all good, but lets just let console know :)
       console.info(
           `Average fetch time ${newLoadAverage} of 2nd pad load was faster than the
-        first load ${stats.ep_performance_test_hooks.averageFetchTime}`
+        first load ${stats.ep_performance_test_hooks.averageFetchTime}`,
       );
     }
     if (newSizeAverage >= stats.ep_performance_test_hooks.averageSize) {
@@ -869,7 +869,7 @@ describe('Performance tests', function () {
       // all good, but lets just let console know :)
       console.info(
           `Average size ${newSizeAverage} of 2nd pad load was smaller than the
-        first load ${stats.ep_performance_test_hooks.averageSize}`
+        first load ${stats.ep_performance_test_hooks.averageSize}`,
       );
     }
   });
