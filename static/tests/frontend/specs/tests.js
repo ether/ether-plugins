@@ -824,15 +824,9 @@ describe('Performance tests', function () {
     this.timeout(60000);
     stats = await getStats();
     stats.ep_performance_test_hooks.averageSize =
-        getAverage(
-            stats.ep_performance_test_hooks.loadSizes,
-            'transferSize',
-        );
+        getAverage(stats.ep_performance_test_hooks.loadSizes, 'transferSize');
     stats.ep_performance_test_hooks.averageFetchTime =
-        getAverage(
-            stats.ep_performance_test_hooks.loadTimes,
-            'fetchUntilResponseEndTime',
-        );
+        getAverage(stats.ep_performance_test_hooks.loadTimes, 'fetchUntilResponseEndTime');
     testValues(stats);
   });
 
@@ -841,14 +835,10 @@ describe('Performance tests', function () {
     // make sure the new values are lower and/or file size is smaller and/or
     // page load is quicker :)
     const newStats = await getStats();
-    const newLoadAverage = getAverage(
-        newStats.ep_performance_test_hooks.loadTimes,
-        'fetchUntilResponseEndTime',
-    );
-    const newSizeAverage = getAverage(
-        newStats.ep_performance_test_hooks.loadSizes,
-        'transferSize',
-    );
+    const newLoadAverage =
+        getAverage(newStats.ep_performance_test_hooks.loadTimes, 'fetchUntilResponseEndTime');
+    const newSizeAverage =
+        getAverage(newStats.ep_performance_test_hooks.loadSizes, 'transferSize');
 
     if (newLoadAverage >= stats.ep_performance_test_hooks.averageFetchTime) {
       throw new Error(
@@ -857,20 +847,18 @@ describe('Performance tests', function () {
     } else {
       // all good, but lets just let console know :)
       console.info(
-          `Average fetch time ${newLoadAverage} of 2nd pad load was faster than the
-        first load ${stats.ep_performance_test_hooks.averageFetchTime}`,
-      );
+          `Average fetch time ${newLoadAverage} of 2nd pad load was faster than the first load ` +
+          `${stats.ep_performance_test_hooks.averageFetchTime}`);
     }
     if (newSizeAverage >= stats.ep_performance_test_hooks.averageSize) {
       throw new Error(
-          `Average size ${newSizeAverage} was not smaller than the
-          first load ${stats.ep_performance_test_hooks.averageSize}`);
+          `Average size ${newSizeAverage} was not smaller than the first load ` +
+          `${stats.ep_performance_test_hooks.averageSize}`);
     } else {
       // all good, but lets just let console know :)
       console.info(
-          `Average size ${newSizeAverage} of 2nd pad load was smaller than the
-        first load ${stats.ep_performance_test_hooks.averageSize}`,
-      );
+          `Average size ${newSizeAverage} of 2nd pad load was smaller than the first load ` +
+          `${stats.ep_performance_test_hooks.averageSize}`);
     }
   });
 });
