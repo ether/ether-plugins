@@ -16,13 +16,17 @@ The headers used by the plugin can be customized.
 
 ## Configuration
 
+To use this plugin the `trustProxy` and `requireAuthentication` config items
+must be set to true, otherwise it won't work as expected.
+
 In your `settings.json`:
 
 ```
 {
   // ...
   "trustProxy": true,
-  "headerauth": {
+  "requireAuthentication": true,
+  "ep_headerauth": {
     // Defaults to "x-authenticated-user"
     "username_header": "x-authenticated-user",
     // Defaults to "x-authenticated-name"
