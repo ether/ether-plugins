@@ -1,6 +1,6 @@
 {
   "name": "ep_disable_imports",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Etherpad plugin to selectively or completely disable imports.",
   "main": "index.js",
   "scripts": {
