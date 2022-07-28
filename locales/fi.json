@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Maantietäjä"
+			"Maantietäjä",
+			"Yupik"
 		]
 	},
-	"ep_padlist2_index_all-pads": "Kaikki merkkaukset",
-	"ep_padlist2_list_heading": "Tyynyt",
-	"ep_padlist2_list_page-title": "Tyynyt",
-	"ep_padlist2_list_search-box.placeholder": "Hae merkintöjä"
+	"ep_padlist2_index_all-pads": "Kaikki muistiot",
+	"ep_padlist2_list_heading": "Muistiot",
+	"ep_padlist2_list_page-title": "Muistiot",
+	"ep_padlist2_list_search-box.placeholder": "Hae muistioita"
 }
