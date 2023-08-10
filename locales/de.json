@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Brettchenweber"
+			"Brettchenweber",
+			"SamTV"
 		]
 	},
 	"ep_padlist2_index_all-pads": "Alle Pads",
 	"ep_padlist2_list_heading": "Pads",
 	"ep_padlist2_list_page-title": "Pads",
-	"ep_padlist2_list_search-box.placeholder": "Pads suchen"
+	"ep_padlist2_list_search-box.placeholder": "Nach Pads suchen"
 }
