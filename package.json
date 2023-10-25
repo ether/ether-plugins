@@ -1,0 +1,25 @@
+{
+  "name": "ep_prefer_color_scheme",
+  "version": "0.0.1",
+  "description": "Change Etherpad-lite skin variant according to system settings",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no tests specified\" && exit 1"
+  },
+  "keywords": [
+    "etherpad",
+    "color",
+    "skin",
+    "theme"
+  ],
+  "author": "SamTV12345",
+  "license": "Apache-2.0 license",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ether/ep_prefer_color_scheme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ether/ep_prefer_color_scheme/issues"
+  },
+  "homepage": "https://github.com/ether/ep_prefer_color_scheme"
+}
