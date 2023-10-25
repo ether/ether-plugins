@@ -19,8 +19,8 @@ exports.aceSetAuthorStyle = function (hook_name, args, cb) {
   else{
     colorm = dayColors
   }
-
   updateColor(colorm)
+  cb()
 }
 
 const updateColor = (colorm) => {

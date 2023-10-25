@@ -3,10 +3,7 @@
     {
       "name": "main",
       "client_hooks": {
-        "aceSetAuthorStyle": "ep_solar/static/js/index:diayNoche"
-      },
-      "hooks": {
-        "clientVars": "ep_solar/index"
+        "aceSetAuthorStyle": "ep_prefer_color_scheme/static/js/index:aceSetAuthorStyle"
       }
     }
   ]
