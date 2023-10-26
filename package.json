@@ -1,6 +1,6 @@
 {
   "name": "ep_prefer_color_scheme",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Change Etherpad-lite skin variant according to system settings",
   "main": "index.js",
   "scripts": {
