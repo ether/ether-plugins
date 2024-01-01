@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"HellojoeAoPS",
 			"列维劳德"
 		]
 	},
-	"ep_padlist2_index_all-pads": "所有平板",
-	"ep_padlist2_list_heading": "平板",
-	"ep_padlist2_list_page-title": "平板",
-	"ep_padlist2_list_search-box.placeholder": "搜索平板"
+	"ep_padlist2_index_all-pads": "所有记事本",
+	"ep_padlist2_list_heading": "记事本",
+	"ep_padlist2_list_page-title": "记事本",
+	"ep_padlist2_list_search-box.placeholder": "搜索记事本"
 }
