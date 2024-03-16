@@ -1,6 +1,6 @@
 {
   "name": "ep_stable_authorid",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Etherpad plugin to give authenticated users the same author ID every time they log in.",
   "main": "index.js",
   "scripts": {
@@ -24,15 +24,12 @@
   },
   "homepage": "https://github.com/ether/ep_stable_authorid#readme",
   "engines": {
-    "node": ">=12.17.0"
+    "node": ">=18.0.0"
   },
   "devDependencies": {
-    "eslint": "^8.11.0",
-    "eslint-config-etherpad": "^3.0.9",
-    "typescript": "^4.6.2"
-  },
-  "peerDependencies": {
-    "ep_etherpad-lite": "^1.9.0"
+    "eslint": "^8.57.0",
+    "eslint-config-etherpad": "^4.0.4",
+    "typescript": "^5.4.2"
   },
   "funding": {
     "type": "individual",
