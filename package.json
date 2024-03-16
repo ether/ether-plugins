@@ -1,10 +1,12 @@
 {
   "name": "ep_prefer_color_scheme",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Change Etherpad-lite skin variant according to system settings",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no tests specified\" && exit 1"
+    "test": "echo \"Error: no tests specified\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
   },
   "keywords": [
     "etherpad",
@@ -21,5 +23,17 @@
   "bugs": {
     "url": "https://github.com/ether/ep_prefer_color_scheme/issues"
   },
-  "homepage": "https://github.com/ether/ep_prefer_color_scheme"
+  "homepage": "https://github.com/ether/ep_prefer_color_scheme",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-etherpad": "^4.0.4",
+    "typescript": "^5.4.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://etherpad.org/"
+  }
 }

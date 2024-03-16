@@ -1,32 +1,30 @@
 exports.aceSetAuthorStyle = function (hook_name, args, cb) {
-  let colorm
+  let colorm;
 
   const nightColors = {
     toolbar: 'dark',
     background: 'super-dark',
     editor: 'dark',
-  }
+  };
 
   const dayColors = {
     toolbar: 'super-light',
     background: 'light',
     editor: 'super-light',
-  }
+  };
 
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    colorm = nightColors
+    colorm = nightColors;
+  } else {
+    colorm = dayColors;
   }
-  else{
-    colorm = dayColors
-  }
-  updateColor(colorm)
-  cb()
-}
+  updateColor(colorm);
+  cb();
+};
 
 const updateColor = (colorm) => {
-
-  const containers = ['editor', 'background', 'toolbar']
-  const colors = ['super-light', 'light', 'dark', 'super-dark']
+  const containers = ['editor', 'background', 'toolbar'];
+  const colors = ['super-light', 'light', 'dark', 'super-dark'];
 
   const domsToUpdate = [
     $('html'),
@@ -37,20 +35,20 @@ const updateColor = (colorm) => {
         .contents()
         .find('html'),
   ];
-  colors.forEach( (color)=> {
-    containers.forEach( (container)=> {
-      domsToUpdate.forEach( (el) =>{
-        el.removeClass(color + '-' + container);
+  colors.forEach((color) => {
+    containers.forEach((container) => {
+      domsToUpdate.forEach((el) => {
+        el.removeClass(`${color}-${container}`);
       });
     });
   });
 
   const new_classes = [];
-  containers.forEach( (container)=> {
-    new_classes.push(colorm[container] + '-' + container);
+  containers.forEach((container) => {
+    new_classes.push(`${colorm[container]}-${container}`);
   });
 
-  domsToUpdate.forEach( (el)=> {
+  domsToUpdate.forEach((el) => {
     el.addClass(new_classes.join(' '));
   });
-}
+};
