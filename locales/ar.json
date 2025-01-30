@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Meno25"
+			"Meno25",
+			"XIDME"
 		]
 	},
 	"ep_embedmedia.embed": "وسائل الإعلام المضمنة",
 	"ep_embedmedia.code": "قم بلصق ارتباط أو تضمين رمز هنا:",
 	"ep_embedmedia.insert": "أدخل الوسائط",
-	"ep_embedmedia.cancel": "يلغي"
+	"ep_embedmedia.cancel": "إلغاء"
 }
