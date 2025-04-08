@@ -1,0 +1,46 @@
+{
+  "name": "ep_monospace_default",
+  "description": "DO NOT USE THIS: Make the font default to Monospace in Etherpad Lite",
+  "homepage": "https://github.com/johnmclear/ep_monospace_default",
+  "keywords": [
+    "monospace",
+    "font",
+    "default",
+    "code",
+    "syntax"
+  ],
+  "author": {
+    "name": "John McLear",
+    "email": "john@mclear.co.uk",
+    "url": "http://mclear.co.uk"
+  },
+  "version": "0.0.22",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/johnmclear/ep_monospace_default.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-etherpad": "^4.0.4",
+    "typescript": "^5.4.2"
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "maintainers": [
+    {
+      "name": "johnyma22",
+      "email": "john@mclear.co.uk"
+    }
+  ],
+  "funding": {
+    "type": "individual",
+    "url": "https://etherpad.org/"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  }
+}
