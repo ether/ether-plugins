@@ -1,0 +1,48 @@
+{
+  "name": "ep_hash_auth",
+  "version": "3.0.20",
+  "description": "Allow the use of hashed passwords in etherpad-lite.",
+  "main": "ep_hash_auth.js",
+  "keywords": [
+    "hash",
+    "password",
+    "auth",
+    "etherpad-lite"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LaKing/ep_hash_auth"
+  },
+  "author": {
+    "name": "István Király",
+    "email": "LaKing@D250.hu",
+    "url": "http://D250.hu"
+  },
+  "contributors": {
+    "name": "Robin Schneider",
+    "email": "ypid@riseup.net",
+    "url": "http://github.com/ypid"
+  },
+  "license": "GPL-3.0+",
+  "readmeFilename": "README.md",
+  "dist": {
+    "shasum": "b70bac22435e00a0196fee2e7db1b228dc5bebf5"
+  },
+  "_from": "ep_hash_auth@",
+  "funding": {
+    "type": "individual",
+    "url": "https://etherpad.org/"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-etherpad": "^4.0.4",
+    "typescript": "^5.4.2"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
