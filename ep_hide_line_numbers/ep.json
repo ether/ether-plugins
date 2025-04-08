@@ -1,0 +1,12 @@
+{
+  "parts": [
+    {
+      "name": "hide_line_numbers",
+      "client_hooks": {
+        "postAceInit": "ep_hide_line_numbers/static/js/hide_line_numbers:postAceInit"
+      },
+      "hooks": {
+      }
+    }
+  ]
+}
