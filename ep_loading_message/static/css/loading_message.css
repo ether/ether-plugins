@@ -1,0 +1,10 @@
+.loading_message{
+  color: var(--text-color);
+  background: var(--bg-soft-color);
+  width:400px;
+  padding:20px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:20px;
+  font-size:14px;
+}

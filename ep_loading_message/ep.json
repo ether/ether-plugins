@@ -1,0 +1,11 @@
+{
+  "parts":[
+    {
+      "name": "loading_message",
+      "hooks": {
+        "eejsBlock_styles": "ep_loading_message/loading_message",
+        "eejsBlock_loading": "ep_loading_message/loading_message"
+      }
+    }
+  ]
+}
