@@ -1,0 +1,14 @@
+{
+  "parts": [
+    {
+      "name": "button_link",
+      "client_hooks": {
+        "aceInitialized": "ep_button_link/static/js/main:postAceInit"
+      },
+      "hooks": {
+        "clientVars": "",
+        "loadSettings": ""
+      }
+    }
+  ]
+}
