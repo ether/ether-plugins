@@ -1,0 +1,263 @@
+.mediawiki {
+  word-wrap: break-word;
+}
+.mediawiki,
+.mediawiki pre,
+.mediawiki code,
+.mediawiki blockquote,
+.mediawiki code {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-family: consolas, monaco, courier, "courier new", fixed-width;
+  color: #333333;
+}
+.mediawiki h1,
+.mediawiki h2,
+.mediawiki h3,
+.mediawiki h4,
+.mediawiki h5,
+.mediawiki h6,
+.mediawiki pre,
+.mediawiki code,
+.mediawiki blockquote,
+.mediawiki ol,
+.mediawiki ul,
+.mediawiki li,
+.mediawiki p,
+.mediawiki section,
+.mediawiki header,
+.mediawiki footer {
+  float: none;
+  margin: 0;
+  padding: 0;
+}
+.mediawiki h1,
+.mediawiki p,
+.mediawiki ul,
+.mediawiki ol,
+.mediawiki pre,
+.mediawiki blockquote {
+}
+.mediawiki h1:before{
+  content: "= ";
+  display:inline;
+}
+.mediawiki h2:before{
+  content: "== ";
+  display:inline;
+}
+.mediawiki h3:before{
+  content: "=== ";
+  display:inline;
+}
+.mediawiki h4:before{
+  content: "==== ";
+  display:inline;
+}
+.mediawiki h5:before{
+  content: "===== ";
+  display:inline;
+}
+.mediawiki h6:before{
+  content: "====== ";
+  display:inline;
+}
+.mediawiki h1:after{
+  content:" =";
+  display:inline;
+}
+.mediawiki h2:after{
+  content:" ==";
+  display:inline;
+}
+.mediawiki h3:after{
+  content:" ===";
+  display:inline;
+}
+.mediawiki h4:after{
+  content:" ====";
+  display:inline;
+}
+.mediawiki h5:after{
+  content:" =====";
+  display:inline;
+}
+.mediawiki h6:after{
+  content:" ======";
+  display:inline;
+}
+
+
+.mediawiki li {
+  position: relative;
+  display: block;
+  padding-left: 34px;
+  padding-left: 4ch;
+}
+.mediawiki li:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*
+.mediawiki ul > li:after {
+  content: "*";
+}
+*/
+/*
+.mediawiki ol > li:before {
+  content: "# ";
+*/
+}
+.mediawiki ol > li:after {
+}
+.mediawiki pre {
+  margin-left: 34px;
+  padding-left: 4ch;
+}
+.mediawiki blockquote {
+  position: relative;
+  padding-left: 17px;
+  padding-left: 2ch;
+  overflow: hidden;
+}
+.mediawiki blockquote:after {
+  content: ">\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>";
+  white-space: pre;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 14px;
+  line-height: 20px;
+}
+.mediawiki strong:before,
+.mediawiki strong:after {
+  content: "__";
+  display: inline;
+}
+.mediawiki em:before,
+.mediawiki em:after {
+  content: "*";
+  display: inline;
+}
+.mediawiki a {
+  text-decoration: none;
+}
+.mediawiki a:before {
+  content: "[";
+  display: inline;
+  color: #333333;
+}
+.mediawiki a:after {
+  content: " " attr(href) "]";
+  display: inline;
+  color: #333333;
+}
+.mediawiki code {
+  font-weight: 100;
+}
+.mediawiki pre code:before,
+.mediawiki pre code:after {
+  content: none;
+}
+.mediawiki hr {
+  position: relative;
+  height: 20px;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+  border: 0;
+  margin-bottom: 20px;
+}
+.mediawiki hr:after {
+  content: "----------------------------------------------------------------------------------------------------";
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 14px;
+  line-height: 20px;
+  width: 100%;
+  word-wrap: break-word;
+}
+@-moz-document url-prefix() {
+  .mediawiki h1 {
+    display: block;
+  }
+}
+.mediawiki-ones ol > li:after {
+/*  content: "1.";*/
+
+}
+
+/* Additional styles added by John McLear for Etherpad */
+
+.mediawiki b:before{
+  content: "'''"
+}
+.mediawiki b:after{
+  content: "'''"
+}
+
+.mediawiki i:before{
+  content: "''"
+}
+.mediawiki i:after{
+  content: "''"
+}
+
+.mediawiki s:before{
+  content: "<strike>"
+}
+.mediawiki s:after{
+  content: "</strike>"
+}
+
+.mediawiki code:before{
+  content: "<code>"
+}
+.mediawiki code:after{
+  content: "</code>"
+}
+
+.mediawiki .list-indent1 > li:before{
+  content: ":"
+}
+
+.mediawiki .list-indent2 > li:before{
+  content: "::"
+}
+
+.mediawiki .list-indent3 > li:before{
+  content: ":::"
+}
+
+.mediawiki .list-indent4 > li:before{
+  content: "::::"
+}
+
+.mediawiki .list-indent5 > li:before{
+  content: ":::::"
+}
+
+.mediawiki u:before{
+  content: "<u>"
+}
+.mediawiki u:after{
+  content: "</u>"
+}
+
+.mediawiki .list-bullet1 > li:before{
+  content: "*";
+}
+
+.mediawiki .list-bullet2 > li:before{
+  content: "*";
+}
+
+.mediawiki .list-bullet3 > li:before{
+  content: "*";
+}
+
