@@ -1,0 +1,10 @@
+{
+  "parts": [
+    {
+      "name": "prompt_for_name",
+      "client_hooks": {
+        "aceInitialized": "ep_prompt_for_name/static/js/index"
+      }
+    }
+  ]
+}
