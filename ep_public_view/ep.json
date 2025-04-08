@@ -1,0 +1,10 @@
+{
+  "parts": [
+    {
+      "name": "ep_public_view",
+      "hooks": {
+        "expressCreateServer"    : "ep_public_view/index:expressServer"
+      }
+    }
+  ]
+}
