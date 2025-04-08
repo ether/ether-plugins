@@ -1,0 +1,12 @@
+{
+ "parts":[
+    {
+      "name": "ep_rss",
+      "hooks": {
+        "eejsBlock_htmlHead": "ep_rss/index",
+        "expressCreateServer" : "ep_rss/index:registerRoute",
+        "eejsBlock_embedPopup": "ep_rss/client:eejsBlock_embedPopup"
+      }
+    }
+  ]
+}
