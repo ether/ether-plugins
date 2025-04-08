@@ -1,0 +1,19 @@
+<tr>
+    <td>
+        <label for="themesmenu">Theme:</label>
+    </td>
+    <td>
+        <select id="themesmenu" onchange="require('ep_etherpad-lite/static/js/pad_cookie').padcookie.setPref('themeName', this.options[this.selectedIndex].value);themes.change();">
+          <option value="normal">Normal</option>
+          <option value="unicorn">Unicorn</option>
+          <option value="highcontrast">High Contrast</option>
+          <option value="terminal">Terminal</option>
+          <option value="hacker">Hacker</option>
+          <option value="cybergal">Cybergal</option>
+          <option value="monokai">Monokai</option>
+          <option value="toothwhite">Toothwhite</option>
+          <option value="yellow">Yellow</option>
+          <option value="bloody">Bloody</option>
+        </select>
+    </td>
+</tr>
