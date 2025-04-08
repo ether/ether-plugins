@@ -1,0 +1,37 @@
+{
+  "name": "ep_announce",
+  "homepage": "https://github.com/orblivion/ep_announce#readme",
+  "repository": {
+    "url": "git@github.com:orblivion/ep_announce.git",
+    "type": "git"
+  },
+  "version": "0.0.28",
+  "description": "Plays a chime when other users join on Etherpad",
+  "author": {
+    "name": "Daniel Krol",
+    "email": "dan@danielkrol.com"
+  },
+  "contributors": [
+    {
+      "name": "John McLear",
+      "email": "john@mclear.co.uk"
+    }
+  ],
+  "engines": {
+    "node": ">=12.17.0"
+  },
+  "dependencies": {},
+  "funding": {
+    "type": "individual",
+    "url": "https://etherpad.org/"
+  },
+  "devDependencies": {
+    "eslint": "^8.54.0",
+    "eslint-config-etherpad": "^3.0.22",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  }
+}
