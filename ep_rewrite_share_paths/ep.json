@@ -1,0 +1,12 @@
+{
+  "parts": [
+    {
+      "name": "rewrite_share_paths",
+      "client_hooks": {
+        "documentReady": "ep_rewrite_share_paths/static/js/rewrite:documentReady"
+      },
+      "hooks": {
+      }
+    }
+  ]
+}

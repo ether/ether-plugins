@@ -1,0 +1,50 @@
+{
+  "name": "ep_rewrite_share_paths",
+  "description": "Rewrite share path to current URL /p/ to / for non read only and do a str.replace for read only pads -- Useful for people doing reverse proxying, team & pro pads",
+  "homepage": "https://github.com/johnmclear/ep_rewrite_share_paths",
+  "keywords": [
+    "team",
+    "pro",
+    "share",
+    "rewrite",
+    "url"
+  ],
+  "author": {
+    "name": "John McLear",
+    "email": "john@mclear.co.uk",
+    "url": "http://mclear.co.uk"
+  },
+  "version": "1.0.22",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/johnmclear/ep_rewrite_share_paths.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-etherpad": "^4.0.4",
+    "typescript": "^5.4.2"
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "_engineSupported": true,
+  "_npmVersion": "1.1.24",
+  "_nodeVersion": "v0.8.8",
+  "_defaultsLoaded": true,
+  "dist": {
+    "shasum": "cc1795cd4b6674885c26fd09ba9f260568789099"
+  },
+  "_from": "ep_rewrite_share_paths@",
+  "readme": "ERROR: No README.md file found!",
+  "_resolved": "https://registry.npmjs.org/ep_rewrite_share_paths/-/ep_rewrite_share_paths-1.0.2.tgz",
+  "funding": {
+    "type": "individual",
+    "url": "https://etherpad.org/"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  }
+}
