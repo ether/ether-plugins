@@ -1,0 +1,12 @@
+{
+  "parts": [
+    {
+      "name": "main",
+      "hooks": {
+        "getAuthorId": "",
+        "init_ep_stable_authorid": "",
+        "loadSettings": ""
+      }
+    }
+  ]
+}

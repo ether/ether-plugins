@@ -1,0 +1,38 @@
+{
+  "name": "ep_stable_authorid",
+  "version": "1.0.2",
+  "description": "Etherpad plugin to give authenticated users the same author ID every time they log in.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "test": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ether/ep_stable_authorid.git"
+  },
+  "keywords": [
+    "etherpad",
+    "plugin",
+    "ep"
+  ],
+  "author": "Richard Hansen <rhansen@rhansen.org>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ether/ep_stable_authorid/issues"
+  },
+  "homepage": "https://github.com/ether/ep_stable_authorid#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-etherpad": "^4.0.4",
+    "typescript": "^5.4.2"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://etherpad.org/"
+  }
+}
