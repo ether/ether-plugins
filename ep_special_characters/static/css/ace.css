@@ -1,0 +1,20 @@
+.specialCharacters {
+  border: 2px solid #bbbbbb;
+  margin: 2px;
+  display: inline-block;
+  line-height: 0;
+}
+
+.specialCharacters .media {
+}
+
+.specialCharacters .media iframe {
+  position: inherit;
+}
+
+.specialCharacters .character {
+  /* Do not use display: none, or you'll break backspace for some reason! */
+  font-size: 0;
+  opacity: 0;
+}
+

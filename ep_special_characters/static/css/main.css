@@ -1,0 +1,51 @@
+#specialCharactersModal {
+  position: absolute;
+  right: 20px;
+  z-index:999999;
+  max-width:600px;
+  background-color: var(--bg-color);
+  padding:20px;
+}
+
+#specialCharactersModal > textarea{
+  max-width:99%;
+}
+
+.buttonicon-special-characters {
+  background: none;
+  color:#666;
+  font-size:18px;
+  line-height:18px;
+}
+
+.specialCharactersButton {
+  padding:10px;
+}
+
+#cancelspecialCharacter{
+  margin-top:20px;
+  color:red;
+}
+
+.specialChar{
+  list-style-type:none;
+  border: solid 1px #666;
+  text-align:center;
+  width:20px;
+  height:28px;
+  font-size:20px;
+  cursor:pointer;
+  cursor:hand;
+  display:inline-block;
+  overflow:hidden;
+}
+
+.specialChars{
+  overflow: auto;
+  scrolling: auto;
+  max-height:400px;
+}
+
+.usedSpecialCharactersLabel{
+  display:none;
+}
