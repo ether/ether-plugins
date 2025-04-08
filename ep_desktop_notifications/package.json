@@ -1,0 +1,39 @@
+{
+  "name": "ep_desktop_notifications",
+  "version": "0.1.44",
+  "keywords": [
+    "desktop",
+    "notifications",
+    "desktop_notifications",
+    "unicornpoop"
+  ],
+  "description": "Receive chat desktop notifications",
+  "contributors": [
+    {
+      "name": "John McLear",
+      "email": "john@mclear.co.uk",
+      "url": "http://mclear.co.uk"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/johnmclear/ep_desktop_notifications.git"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://etherpad.org/"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-etherpad": "^4.0.4",
+    "typescript": "^5.4.2"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  }
+}
