@@ -1,0 +1,13 @@
+
+{
+  "parts":[
+    {
+      "name": "ep_disable_chat",
+      "hooks": {
+        "eejsBlock_styles":"ep_disable_chat/disable_chat:eejsBlock_styles"
+      },
+      "client_hooks": {
+      }
+    }
+  ]
+}
