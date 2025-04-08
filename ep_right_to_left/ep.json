@@ -1,0 +1,10 @@
+{
+  "parts": [
+    {
+      "name": "right_to_left",
+      "client_hooks": {
+        "postAceInit": "ep_right_to_left/static/js/rtl:postAceInit"
+      }
+    }
+  ]
+}

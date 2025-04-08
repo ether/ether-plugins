@@ -1,0 +1,53 @@
+{
+  "name": "ep_right_to_left",
+  "description": "Make the text inside a Pad and Chat go from right to left",
+  "homepage": "https://github.com/johnyma22/ep_right_to_left",
+  "keywords": [
+    "RTL",
+    "Arabic",
+    "Pad",
+    "Language",
+    "Chat"
+  ],
+  "author": {
+    "name": "John McLear",
+    "email": "john@mclear.co.uk",
+    "url": "http://mclear.co.uk"
+  },
+  "version": "0.0.18",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/johnmclear/ep_right_to_left.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-etherpad": "^4.0.4",
+    "typescript": "^5.4.2"
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "_engineSupported": true,
+  "_npmVersion": "1.1.24",
+  "_nodeVersion": "v0.8.8",
+  "_defaultsLoaded": true,
+  "dist": {
+    "shasum": "4e465bcee8f42cdac337ba28a453644ec2667263"
+  },
+  "_from": "ep_right_to_left",
+  "readme": "ERROR: No README.md file found!",
+  "_npmUser": {
+    "name": "johnyma22",
+    "email": "john@mclear.co.uk"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://etherpad.org/"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  }
+}
