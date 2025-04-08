@@ -1,0 +1,10 @@
+{
+  "parts":[
+    {
+      "name": "clear_authorship_no_prompt",
+      "client_hooks": {
+        "postAceInit": "ep_clear_authorship_no_prompt/static/js/init"
+      }
+    }
+  ]
+}
