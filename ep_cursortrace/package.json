@@ -1,0 +1,31 @@
+{
+  "name": "ep_cursortrace",
+  "description": "Show cursor/caret movements of other users in real time",
+  "version": "3.1.17",
+  "author": "RedHog (Egil Moeller) <egil.moller@freecode.no>",
+  "repository": "git@github.com:redhog/ep_cursortrace.git",
+  "contributors": [
+    {
+      "name": "John McLear",
+      "email": "john@mclear.co.uk",
+      "url": "http://mclear.co.uk"
+    }
+  ],
+  "dependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://etherpad.org/"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-etherpad": "^4.0.4",
+    "typescript": "^5.4.2"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  }
+}
