@@ -1,0 +1,34 @@
+{
+  "author": {
+    "name": "johnyma22",
+    "email": "john@mclear.co.uk",
+    "url": "John McLear"
+  },
+  "bundleDependencies": false,
+  "contributors": [],
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Disable Error messages to clients in Etherpad",
+  "name": "ep_disable_error_messages",
+  "version": "0.0.29",
+  "funding": {
+    "type": "individual",
+    "url": "https://etherpad.org/"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-etherpad": "^4.0.4",
+    "typescript": "^5.4.2"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ether/ep_disable_error_messages.git"
+  }
+}

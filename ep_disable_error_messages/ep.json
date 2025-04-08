@@ -1,0 +1,12 @@
+
+{
+  "parts":[
+    {
+      "name": "ep_disable_error_messages",
+      "hooks": {},
+      "client_hooks": {
+         "postAceInit":"ep_disable_error_messages/static/js/disable_error_messages:postAceInit"
+      }
+    }
+  ]
+}
