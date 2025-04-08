@@ -1,0 +1,42 @@
+{
+  "engine": ">=10.17.1",
+  "author": {
+    "name": "John McLear",
+    "email": "john@mclear.co.uk"
+  },
+  "bugs": {
+    "url": "https://github.com/ether/ep_prometheus/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Etherpad plugin to show performance stats in /stats url",
+  "funding": {
+    "type": "individual",
+    "url": "https://etherpad.org/"
+  },
+  "homepage": "https://github.com/ether/ep_prometheus#readme",
+  "keywords": [
+    "etherpad",
+    "plugin",
+    "prometheus",
+    "ep"
+  ],
+  "name": "ep_prometheus",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ether/ep_prometheus.git"
+  },
+  "version": "0.0.20",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-etherpad": "^4.0.4",
+    "typescript": "^5.4.2"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
