@@ -1,0 +1,32 @@
+{
+  "name": "ep_offline_edit",
+  "version": "0.0.33",
+  "description": "View your pad data even if you are disconnected from the Internets",
+  "author": {
+    "name": "John McLear",
+    "email": "john@mclear.co.uk",
+    "url": "http://mclear.co.uk"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JohnMcLear/ep_offline_edit.git"
+  },
+  "dependencies": {},
+  "readmeFilename": "README.md",
+  "funding": {
+    "type": "individual",
+    "url": "https://etherpad.org/"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-etherpad": "^4.0.4",
+    "typescript": "^5.4.2"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  }
+}
