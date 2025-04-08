@@ -1,0 +1,37 @@
+{
+  "name": "ep_clear_formatting",
+  "version": "0.0.22",
+  "keywords": [
+    "clear",
+    "formatting"
+  ],
+  "description": "Clear formatting on a selection, this plugin requires the file menu",
+  "contributors": [
+    {
+      "name": "John McLear",
+      "email": "john@mclear.co.uk",
+      "url": "http://mclear.co.uk"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ether/ep_clear_formatting.git"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://etherpad.org/"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-etherpad": "^4.0.4",
+    "typescript": "^5.4.2"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  }
+}
