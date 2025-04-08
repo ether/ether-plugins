@@ -1,0 +1,7 @@
+{
+	"@metadata": {
+		"authors": []
+	},
+	"pad.settings.ep_author_follow.enableFollow": "Volg auteur(s)",
+	"pad.settings.ep_author_follow.followAll": "Volg alle auteurs"
+}
