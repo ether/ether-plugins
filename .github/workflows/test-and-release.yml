@@ -1,0 +1,12 @@
+name: Node.js Package
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "plugins/**"
+
+jobs:
+  backend:
+
+    uses: ether/ether-pipelines/.github/workflows/test-and-release-plugins.yml@main
+    secrets: inherit

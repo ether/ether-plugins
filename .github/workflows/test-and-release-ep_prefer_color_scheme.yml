@@ -1,0 +1,11 @@
+name: Node.js Package
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "ep_prefer_color_scheme/**"
+
+jobs:
+  backend:
+    uses: ether/ether-pipelines/.github/workflows/test-and-release-plugins.yml@main
+    secrets: inherit

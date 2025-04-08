@@ -1,5 +1,9 @@
 name: Node.js Package
-on: [push]
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "ep_real_time_chat/**"
 
 jobs:
   backend:
