@@ -1,0 +1,19 @@
+{
+    "parts": [
+        {
+            "name": "ep_performance_test_hooks",
+            "hooks": {
+                "handleMessage" : "ep_performance_test_hooks/index"
+            },
+            "client_hooks":{
+                "postAceInit" : "ep_performance_test_hooks/static/js/performance",
+                "documentReady" : "ep_performance_test_hooks/static/js/performance",
+                "aceInitInnerdocbodyHead" : "ep_performance_test_hooks/static/js/performance",
+                "aceInitialized" : "ep_performance_test_hooks/static/js/performance",
+                "postAceInit" : "ep_performance_test_hooks/static/js/performance",
+                "postToolbarInit" : "ep_performance_test_hooks/static/js/performance",
+                "postTimesliderInit" : "ep_performance_test_hooks/static/js/performance"
+            }
+        }
+    ]
+}
