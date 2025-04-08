@@ -1,0 +1,51 @@
+{
+  "description": "Adds comments on sidebar and link it to the text.  For no-skin use ep_page_view.",
+  "name": "ep_comments_page",
+  "version": "1.0.36",
+  "author": {
+    "name": "Nicolas Lescop",
+    "email": "limplementeur@gmail.com"
+  },
+  "license": "Apache-2.0",
+  "contributors": [
+    {
+      "name": "Nicolas Lescop",
+      "email": "limplementeur@gmail.com"
+    },
+    {
+      "name": "John McLear",
+      "email": "john@mclear.co.uk"
+    },
+    {
+      "name": "Luiza Pagliari",
+      "email": "lpagliari@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "formidable": "^3.5.1",
+    "underscore": "^1.13.6"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-etherpad": "^4.0.4",
+    "socket.io-client": "*",
+    "superagent": "^8.1.2",
+    "typescript": "^5.4.2"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ether/ep_comments"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://etherpad.org/"
+  }
+}
