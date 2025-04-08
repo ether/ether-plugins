@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"ep_guest_login": "Aloggen",
+	"ep_guest_logout": "Ausloggen"
+}

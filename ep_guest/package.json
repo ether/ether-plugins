@@ -1,0 +1,41 @@
+{
+  "name": "ep_guest",
+  "version": "1.0.32",
+  "description": "Etherpad plugin to grant limited access to users that are not logged in.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ether/ep_guest.git"
+  },
+  "keywords": [
+    "auth",
+    "authentication",
+    "ep",
+    "etherpad",
+    "plugin"
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ether/ep_guest/issues"
+  },
+  "homepage": "https://github.com/ether/ep_guest#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://etherpad.org/"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-etherpad": "^4.0.4",
+    "typescript": "^5.4.2"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

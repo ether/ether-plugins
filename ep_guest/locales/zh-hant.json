@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kly"
+		]
+	},
+	"ep_guest_login": "登入",
+	"ep_guest_logout": "登出"
+}
