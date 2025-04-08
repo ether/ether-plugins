@@ -1,0 +1,10 @@
+{
+  "parts": [
+    {
+      "name": "main",
+      "client_hooks": {
+        "aceSetAuthorStyle": "ep_prefer_color_scheme/static/js/index:aceSetAuthorStyle"
+      }
+    }
+  ]
+}

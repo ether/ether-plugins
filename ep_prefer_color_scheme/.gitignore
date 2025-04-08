@@ -1,0 +1,5 @@
+.ep_initialized
+.prettierrc
+.vscode/settings.json
+.idea
+node_modules/
