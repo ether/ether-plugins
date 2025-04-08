@@ -1,0 +1,79 @@
+<div id='referenceContainer'>
+
+  <div id='referenceSelector'>
+    <!-- selector for choosing which pad to refer to -->
+    <form id='referenceForm'>
+      <input id='referenceInput' placeholder='padId'>
+      <input type='submit' id='referenceSubmit' value='Open'>
+    </form>
+  </div>
+
+  <div id='referenceActions'>
+    <button id='referenceCreate' disabled=disabled>+ Reference</button>
+    <button id='quotationCreate' disabled=disabled>+ Quote</button>
+    <!-- Actions such as create a reference -->
+  </div>
+
+  <div id='reference'>
+    Type in padId above to open a reference Pad.
+    <!-- Actual reference document contents -->
+  </div>
+</div>
+
+<style>
+#referenceContainer{
+  position:fixed;
+  top:38px;
+  width:400px;
+  bottom:0px;
+  background:var(--scrollbar-bg);
+  color: var(--scrollbar-thumb);
+  right:0px;
+  z-index:9;
+  border-left:solid 1px #666;
+  display:none;
+}
+#referenceSelector{
+  display:inline-block;
+  width:190px;
+  padding:10px 5px 10px 10px;
+}
+#referenceSubmit{
+  color: var(--scrollbar-bg);
+}
+#referenceInput{
+  width:100px;
+  color: var(--scrollbar-bg);
+}
+#referenceActions{
+  display:inline-block;
+  width:150px;
+}
+#referenceCreate{
+  padding:2px 6px 3px;
+  position:absolute;
+  top:10px;
+  right:10px;
+}
+#quotationCreate{
+  padding:2px 6px 3px;
+  position:absolute;
+  top:10px;
+  right:120px;
+}
+#referenceContainer input{
+  padding:2px 6px 3px;
+}
+
+#reference{
+  padding:10px;
+  background:var(--scrollbar-bg);
+  top:50px;
+  left:0px;
+  right:0px;
+  bottom:0px;
+  font-size:14px;
+  overflow:auto;
+  position:absolute;
+}
+</style>
