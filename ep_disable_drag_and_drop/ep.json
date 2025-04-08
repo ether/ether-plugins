@@ -1,0 +1,10 @@
+{
+  "parts":[
+    {
+      "name": "disable_drag_and_drop",
+      "client_hooks": {
+        "aceInitInnerdocbodyHead": "ep_disable_drag_and_drop/static/js/main:aceInitInnerdocbodyHead"
+      }
+    }
+  ]
+}
