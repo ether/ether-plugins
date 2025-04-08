@@ -1,0 +1,11 @@
+{
+  "parts":[
+    {
+      "name": "disableNameInputbox",
+      "hooks": {},
+      "client_hooks": {
+        "postAceInit": "ep_disable_change_author_name/static/js/disable:postAceInit"
+      }
+    }
+  ]
+}
