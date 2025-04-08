@@ -1,0 +1,32 @@
+{
+  "name": "ep_pad_title",
+  "description": "Set the pad title to a static string",
+  "version": "0.0.20",
+  "author": {
+    "name": "John McLear",
+    "email": "john@mclear.co.uk",
+    "url": "http://mclear.co.uk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnmclear/ep_pad_title"
+  },
+  "contributors": [],
+  "_from": "ep_pad_title@",
+  "funding": {
+    "type": "individual",
+    "url": "https://etherpad.org/"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-etherpad": "^4.0.4",
+    "typescript": "^5.4.2"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
