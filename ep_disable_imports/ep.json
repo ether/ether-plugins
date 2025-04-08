@@ -1,0 +1,11 @@
+{
+  "parts": [
+    {
+      "name": "ep_disable_imports",
+      "hooks": {
+        "import": "",
+        "loadSettings": ""
+      }
+    }
+  ]
+}
