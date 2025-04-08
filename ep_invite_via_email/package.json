@@ -1,0 +1,49 @@
+{
+  "name": "ep_invite_via_email",
+  "description": "Invite a user to a pad on Etherpad",
+  "version": "0.0.25",
+  "author": {
+    "name": "johnyma22",
+    "email": "john@mclear.co.uk",
+    "url": "John McLear"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JohnMcLear/ep_invite_via_email.git"
+  },
+  "contributors": [],
+  "dependencies": {
+    "emailjs": "3.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dist": {
+    "shasum": "83f0b27970bb23e7186d77049a0aa1e2e07e0b58",
+    "tarball": "http://registry.npmjs.org/ep_invite_via_email/-/ep_invite_via_email-0.0.3.tgz"
+  },
+  "_from": "ep_invite_via_email@",
+  "readme": "",
+  "maintainers": [
+    {
+      "name": "johnyma22",
+      "email": "john@mclear.co.uk"
+    }
+  ],
+  "directories": {},
+  "_shasum": "83f0b27970bb23e7186d77049a0aa1e2e07e0b58",
+  "_resolved": "https://registry.npmjs.org/ep_invite_via_email/-/ep_invite_via_email-0.0.3.tgz",
+  "funding": {
+    "type": "individual",
+    "url": "https://etherpad.org/"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-etherpad": "^4.0.4",
+    "typescript": "^5.4.2"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  }
+}
