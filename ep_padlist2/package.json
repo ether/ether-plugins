@@ -1,0 +1,36 @@
+{
+  "name": "ep_padlist2",
+  "version": "2.1.48",
+  "description": "Etherpad plugin to display a list of pads.",
+  "keywords": [
+    "ep",
+    "etherpad",
+    "plugin"
+  ],
+  "homepage": "https://github.com/ether/ep_padlist2",
+  "bugs": {
+    "url": "https://github.com/ether/ep_padlist2/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/ether/ep_padlist2.git"
+  },
+  "main": "index.js",
+  "license": "Apache-2.0",
+  "funding": {
+    "type": "individual",
+    "url": "https://etherpad.org/"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-etherpad": "^4.0.4",
+    "typescript": "^5.4.2"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

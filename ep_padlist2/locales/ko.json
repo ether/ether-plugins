@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ykhwong"
+		]
+	},
+	"ep_padlist2_index_all-pads": "모든 패드",
+	"ep_padlist2_list_heading": "패드",
+	"ep_padlist2_list_page-title": "패드",
+	"ep_padlist2_list_search-box.placeholder": "패드 검색"
+}
