@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Atriwidada"
+		]
+	},
+	"ep_embedmedia.embed": "Tanamkan Media",
+	"ep_embedmedia.code": "Tempelkan suatu tautan atau tanamkan kode di sini:",
+	"ep_embedmedia.insert": "Sisipkan media",
+	"ep_embedmedia.cancel": "Batal"
+}

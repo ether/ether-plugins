@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amire80"
+		]
+	},
+	"ep_embedmedia.embed": "הטמעת מדיה",
+	"ep_embedmedia.code": "להדביק קישור או קוד הטבעה כאן:",
+	"ep_embedmedia.insert": "הוספת מדיה",
+	"ep_embedmedia.cancel": "ביטול"
+}

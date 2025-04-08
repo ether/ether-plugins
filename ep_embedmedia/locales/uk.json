@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"DDPAT",
+			"Ice bulldog"
+		]
+	},
+	"ep_embedmedia.embed": "Вставити медіа",
+	"ep_embedmedia.code": "Вставте посилання або код для вставки тут:",
+	"ep_embedmedia.insert": "Вставити медіа",
+	"ep_embedmedia.cancel": "Скасувати"
+}

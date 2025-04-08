@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hedda"
+		]
+	},
+	"ep_embedmedia.embed": "Medya Gömme",
+	"ep_embedmedia.code": "Buraya bir bağlantı veya gömme kodu yapıştırın:",
+	"ep_embedmedia.insert": "Dosyayı ekle",
+	"ep_embedmedia.cancel": "İptal"
+}

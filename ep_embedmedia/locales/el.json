@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Norhorn"
+		]
+	},
+	"ep_embedmedia.embed": "Ενσωμάτωση πολυμέσου",
+	"ep_embedmedia.code": "Επικολλήστε έναν σύνδεσμο ή ενσωματώστε κώδικα εδώ:",
+	"ep_embedmedia.insert": "Εισαγωγή πολυμέσων",
+	"ep_embedmedia.cancel": "Ακύρωση"
+}

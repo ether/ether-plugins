@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jeeputer"
+		]
+	},
+	"ep_embedmedia.embed": "درج رسانه",
+	"ep_embedmedia.code": "در اینجا یک پیوند یا کد درج کنید:",
+	"ep_embedmedia.insert": "درج رسانه",
+	"ep_embedmedia.cancel": "لغو"
+}

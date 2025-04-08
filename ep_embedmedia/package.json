@@ -1,0 +1,30 @@
+{
+  "name": "ep_embedmedia",
+  "description": "Embed media (youtube, vimeo etc)",
+  "version": "0.0.63",
+  "author": "RedHog (Egil Moeller) <egil.moller@freecode.no>",
+  "contributors": [
+    "johnyma22 (John McLear) <john@mclear.co.uk>"
+  ],
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JohnMcLear/ep_embedmedia.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://etherpad.org/"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-etherpad": "^4.0.4",
+    "typescript": "^5.4.2"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  }
+}

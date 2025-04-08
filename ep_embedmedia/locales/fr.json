@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Verdy p"
+		]
+	},
+	"ep_embedmedia.embed": "Intégrer le média",
+	"ep_embedmedia.code": "Collez un lien ou un code d'intégration ici :",
+	"ep_embedmedia.insert": "Insérer un média",
+	"ep_embedmedia.cancel": "Annuler"
+}

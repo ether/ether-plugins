@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"TsuyaMarisa"
+		]
+	},
+	"ep_embedmedia.embed": "嵌入媒体",
+	"ep_embedmedia.code": "在这里粘贴链接或嵌入代码：",
+	"ep_embedmedia.insert": "插入媒体",
+	"ep_embedmedia.cancel": "取消"
+}

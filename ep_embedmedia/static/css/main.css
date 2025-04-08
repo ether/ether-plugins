@@ -1,0 +1,25 @@
+#embedMediaModal {
+  position: absolute;
+  top: 55px;
+  right: 20px;
+  padding:20px;
+}
+
+.embedMediaButton {
+  padding:10px;
+  background: var(--soft-bg-color);
+  color: var(--text-color);
+}
+
+#cancelEmbedMedia{
+  color:red;
+}
+
+#insertEmbedMedia {
+  font-family:font-awesome;
+}
+
+.buttonicon-embed-media:before{
+  content:"\E83A";
+  top: 2px !important;
+}

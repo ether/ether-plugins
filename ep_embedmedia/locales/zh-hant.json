@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kly"
+		]
+	},
+	"ep_embedmedia.embed": "內嵌媒體",
+	"ep_embedmedia.code": "在此貼上連結或是內嵌代碼：",
+	"ep_embedmedia.insert": "插入媒體",
+	"ep_embedmedia.cancel": "取消"
+}

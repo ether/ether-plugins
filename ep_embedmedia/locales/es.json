@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Avengium",
+			"Jakeukalane"
+		]
+	},
+	"ep_embedmedia.code": "Pega un enlace o código de inserción aquí:",
+	"ep_embedmedia.cancel": "Cancelar"
+}

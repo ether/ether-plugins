@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ghose"
+		]
+	},
+	"ep_embedmedia.embed": "Incluír Multimedia",
+	"ep_embedmedia.code": "Pegar unha ligazón ou incluír aquí o código:",
+	"ep_embedmedia.insert": "Inserir multimedia",
+	"ep_embedmedia.cancel": "Cancelar"
+}

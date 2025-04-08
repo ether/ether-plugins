@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Spotter"
+		]
+	},
+	"ep_embedmedia.embed": "Vložená média",
+	"ep_embedmedia.code": "Zde vložte odkaz nebo vložený kód:",
+	"ep_embedmedia.insert": "Vložte média",
+	"ep_embedmedia.cancel": "Zrušit"
+}

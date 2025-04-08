@@ -1,0 +1,13 @@
+<div id="embedMediaModal" class="popup">
+  <div class='popup-content'>
+    <% e.begin_block("embedMediaPopup"); %>
+        <h1 data-l10n-id="ep_embedmedia.embed">Embed Media</h1>
+        <p data-l10n-id="ep_embedmedia.code">Paste a link or "embed code" here:</p>
+        <textarea id="embedMediaSrc" rows="10" cols="60"></textarea>
+        <div>
+            <input type="button" class="embedMediaButton" id="doEmbedMedia" value="Insert media" data-l10n-id="ep_embedmedia.insert">
+            <input type="button" class="embedMediaButton" id="cancelEmbedMedia" value="Cancel" data-l10n-id="ep_embedmedia.cancel">
+        </div>
+    <% e.end_block(); %>
+  </div>
+</div>

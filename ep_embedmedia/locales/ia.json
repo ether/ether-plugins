@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"ep_embedmedia.embed": "Incastrar multimedia",
+	"ep_embedmedia.code": "Colla un ligamine o codice de incastration hic:",
+	"ep_embedmedia.insert": "Inserer multimedia",
+	"ep_embedmedia.cancel": "Cancellar"
+}

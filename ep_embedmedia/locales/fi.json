@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Artnay",
+			"MITO"
+		]
+	},
+	"ep_embedmedia.embed": "Upota media",
+	"ep_embedmedia.code": "Liitä linkki tai upota koodi tähän:",
+	"ep_embedmedia.insert": "Lisää media",
+	"ep_embedmedia.cancel": "Peruuta"
+}

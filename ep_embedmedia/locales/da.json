@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Antonla"
+		]
+	},
+	"ep_embedmedia.embed": "Indlejr medie",
+	"ep_embedmedia.code": "Indsæt et link eller indlejr kode her:",
+	"ep_embedmedia.insert": "Indsæt medie",
+	"ep_embedmedia.cancel": "Annuller"
+}

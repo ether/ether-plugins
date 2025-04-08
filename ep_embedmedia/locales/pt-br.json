@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eduardoaddad",
+			"Svjatysberega"
+		]
+	},
+	"ep_embedmedia.embed": "Inserir Mídia",
+	"ep_embedmedia.code": "Cole ou link ou insira um código aqui:",
+	"ep_embedmedia.insert": "Inserir mídia",
+	"ep_embedmedia.cancel": "Cancelar"
+}

@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sabelöga"
+		]
+	},
+	"ep_embedmedia.embed": "Bädda in media",
+	"ep_embedmedia.code": "Klistra in en länk eller inbäddad kod här:",
+	"ep_embedmedia.insert": "Infoga media",
+	"ep_embedmedia.cancel": "Avbryt"
+}

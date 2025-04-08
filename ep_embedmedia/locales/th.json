@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": []
+	},
+	"ep_embedmedia.embed": "ฝังสื่อ",
+	"ep_embedmedia.code": "วางลิงก์หรือโค้ดฝังที่นี่:",
+	"ep_embedmedia.insert": "แทรกสื่อ",
+	"ep_embedmedia.cancel": "ยกเลิก"
+}

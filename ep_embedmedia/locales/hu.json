@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": []
+	},
+	"ep_embedmedia.embed": "Média beágyazása",
+	"ep_embedmedia.code": "Illesszen ide egy linket vagy beágyazási kódot:",
+	"ep_embedmedia.insert": "Adathordozó behelyezése",
+	"ep_embedmedia.cancel": "Mégse"
+}

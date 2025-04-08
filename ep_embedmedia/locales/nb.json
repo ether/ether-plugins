@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"ep_embedmedia.embed": "Bygg inn medier",
+	"ep_embedmedia.code": "Lim inn ei lenke eller innbyggingskode her:",
+	"ep_embedmedia.insert": "Sett inn medier",
+	"ep_embedmedia.cancel": "Avbryt"
+}

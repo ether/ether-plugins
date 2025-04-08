@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"JSantos",
+			"Joao Xavier"
+		]
+	},
+	"ep_embedmedia.embed": "Adjuntar arkivi ''media''",
+	"ep_embedmedia.code": "Kopiez ligilo o kopiez kodexo hike:",
+	"ep_embedmedia.insert": "Adjuntez arkivo",
+	"ep_embedmedia.cancel": "Desfacar"
+}

@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ykhwong"
+		]
+	},
+	"ep_embedmedia.embed": "미디어 포함",
+	"ep_embedmedia.code": "여기에 링크를 붙이거나 코드를 포함하십시오:",
+	"ep_embedmedia.insert": "미디어 추가",
+	"ep_embedmedia.cancel": "취소"
+}

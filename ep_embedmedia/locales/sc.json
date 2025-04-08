@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Adr mm"
+		]
+	},
+	"ep_embedmedia.embed": "Incòrpora elementos multimediales",
+	"ep_embedmedia.code": "Incolla unu ligòngiu o incòrpora còdighe inoghe:",
+	"ep_embedmedia.insert": "Inserta un'elementu multimediale",
+	"ep_embedmedia.cancel": "Annulla"
+}

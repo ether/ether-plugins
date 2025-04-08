@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eleassar"
+		]
+	},
+	"ep_embedmedia.embed": "Vključi predstavnost",
+	"ep_embedmedia.code": "Sem prilepite povezavo ali kodo za vjljučitev:",
+	"ep_embedmedia.insert": "Vstavi predstavnost",
+	"ep_embedmedia.cancel": "Prekliči"
+}

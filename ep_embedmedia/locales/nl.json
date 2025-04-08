@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mainframe98"
+		]
+	},
+	"ep_embedmedia.embed": "Media invoegen",
+	"ep_embedmedia.code": "Plak hier een koppeling of embed-code:",
+	"ep_embedmedia.insert": "Media invoegen",
+	"ep_embedmedia.cancel": "Annuleren"
+}
