@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+  <html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>External link</title>
+
+<script type="text/javascript">
+  window.redir_onload = function() {
+    var urlhash = location.hash.substr(1);
+    if (urlhash.search(':') < 0) {
+      urlhash = unescape(urlhash);
+    }
+
+    var the_content = document.getElementById('content');
+    if (urlhash) {
+      urlhash = decodeURIComponent(urlhash);
+
+      // whitelist "safe" URL and URI schemes, and warn for others
+      safe_regexp = /^(ftps?|https?):\/\/|(about|geo|mailto):/i;
+      var link = document.createElement('a');
+      link.href = urlhash;
+      link.appendChild(document.createTextNode(urlhash));
+      h3 = document.createElement('h3');
+      h3.appendChild(link);
+
+      if (!safe_regexp.test(urlhash)) {
+        the_content.innerHTML = '<h4>Unknown URI scheme &ndash; possible XSS attempt?</h4>' +
+          '<h4>Proceed with caution:</h4>';
+        the_content.append(h3);
+      } else {
+        the_content.innerHTML = '<h4>Referer protection &ndash; Click to visit this external link:</h4>';
+        the_content.append(h3);
+      }
+    } else {
+      the_content.innerHTML = '<h4>Nothing to see here. Move along.</h4>';
+    }
+  };
+</script>
+</head>
+
+<body onload="redir_onload()">
+<div id="content" style="text-align:center">For the next trick, we'll need a volunteer with javascript enabled :)</div>
+</body>
+</html>
