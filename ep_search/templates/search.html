@@ -1,0 +1,29 @@
+<script src="/static/js/jquery.js"></script>
+<br/>
+<label for="searchInput"><h2>Search:</h2></label>
+<form id="searchForm">
+<input id="searchInput" type="text">
+<input type="submit">
+</form>
+<div id="searchResults"></div>
+
+<script type="text/javascript">
+$('#searchForm').keyup(function(){
+  $("#searchResults").html("");
+  doSearch();
+});
+
+function doSearch(){
+  var searchString = $("#searchInput").val();
+  $("#searchResults").html("");
+  $.getJSON('/search/?query='+searchString, function(data) {
+    // console.log(data);
+    $.each(data, function(index, value){
+      // console.log(value);
+      value = value.replace("pad:", "");
+      value = encodeURI(value);
+      $("#searchResults").append("<a href='/p/"+value+"'>"+value+"</a>");
+    });
+  });
+}
+</script>

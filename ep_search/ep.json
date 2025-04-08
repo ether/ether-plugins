@@ -1,0 +1,13 @@
+{
+  "parts":[
+    {
+      "name": "ep_search",
+      "hooks": {
+        "expressCreateServer" : "ep_search/index:registerRoute",
+        "eejsBlock_indexWrapper": "ep_search/client"
+      },
+      "client_hooks": {
+      }
+    }
+  ]
+}
