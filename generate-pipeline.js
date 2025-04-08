@@ -14,6 +14,8 @@ jobs:
   backend:
     uses: ether/ether-pipelines/.github/workflows/test-and-release-plugins.yml@main
     secrets: inherit
+    with:
+       pluginDirectory: '${path}'
 `
 
 for (let file of readdirSync('.')) {
