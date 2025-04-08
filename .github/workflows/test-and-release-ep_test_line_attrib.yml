@@ -7,7 +7,7 @@ on:
 
 jobs:
   backend:
-    uses: ether/ether-pipelines/.github/workflows/test-and-release-plugins.yml@main
+    uses: ether/ether-pipelines/.github/workflows/test-and-release-plugins-monorepo.yml@main
     secrets: inherit
     with:
        pluginDirectory: 'ep_test_line_attrib'

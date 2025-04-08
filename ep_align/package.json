@@ -19,6 +19,7 @@
     "type": "git",
     "url": "https://github.com/ether/ether-plugins.git"
   },
+
   "version": "0.3.97",
   "funding": {
     "type": "individual",
