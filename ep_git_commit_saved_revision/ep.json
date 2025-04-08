@@ -1,0 +1,15 @@
+{
+  "parts": [
+    {
+      "name": "ep_git_commit_saved_revision",
+      "client_hooks": {
+        "postAceInit": "ep_git_commit_saved_revision/static/js/index:documentReady",
+        "handleClientMessage_CUSTOM": "ep_git_commit_saved_revision/static/js/index"
+      },
+      "hooks": {
+        "eejsBlock_body":"ep_git_commit_saved_revision/eejs",
+        "handleMessage": "ep_git_commit_saved_revision/handleMessage"
+      }
+    }
+  ]
+}
