@@ -1,7 +1,7 @@
 {
   "name": "ep_disable_change_author_name",
   "description": "A plugin to stop users from being able to change their names",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "author": {
     "name": "johnyma22",
     "email": "john@mclear.co.uk",
@@ -12,7 +12,6 @@
   "engines": {
     "node": ">=20.0.0"
   },
-  "_id": "ep_disable_change_author_name@0.0.2",
   "dist": {
     "shasum": "7a668717f83a7027ecd5316aa44833c4cc105ee8",
     "tarball": "http://registry.npmjs.org/ep_disable_change_author_name/-/ep_disable_change_author_name-0.0.2.tgz"
