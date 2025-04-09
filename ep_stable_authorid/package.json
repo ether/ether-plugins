@@ -1,6 +1,6 @@
 {
   "name": "ep_stable_authorid",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Etherpad plugin to give authenticated users the same author ID every time they log in.",
   "main": "index.js",
   "scripts": {
