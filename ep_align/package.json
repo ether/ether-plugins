@@ -25,12 +25,12 @@
     "url": "https://etherpad.org/"
   },
   "devDependencies": {
-    "@types/mocha": "^10.0.6",
-    "@types/node": "^20.12.4",
-    "eslint": "^8.57.0",
-    "eslint-config-etherpad": "^4.0.4",
-    "mocha": "^10.4.0",
-    "typescript": "^5.4.3"
+    "@types/mocha": "catalog:",
+    "@types/node": "catalog:",
+    "eslint": "catalog:",
+    "eslint-config-etherpad": "catalog:",
+    "mocha": "catalog:",
+    "typescript": "catalog:"
   },
   "scripts": {
     "lint": "eslint .",

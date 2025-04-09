@@ -1,0 +1,23 @@
+{
+  "name": "ether-plugins",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "generate:pipeline": "tsx src/generate-pipeline.ts",
+    "bump:node": "tsx src/updateNodeEngine.ts",
+    "move:versions": "tsx src/moveVersionsToPnpmWorkspace.ts"
+  },
+  "dependencies": {
+    "@package-json/types": "^0.0.11",
+    "tsx": "^4.19.3",
+    "yaml": "^2.7.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

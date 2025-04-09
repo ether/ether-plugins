@@ -1,9 +1,9 @@
-const path = require('path');
-const {readdirSync, statSync} = require("node:fs");
+import {join} from 'node:path';
+import {readdirSync, statSync} from "node:fs";
+import {exclusions} from './constants'
 
 
-
-const generateContent = (path, )=>`name: Node.js Package
+const generateContent = (path: string)=>`name: Node.js Package
 on:
   push:
     branches: [ "main" ]
@@ -18,12 +18,17 @@ jobs:
        pluginDirectory: '${path}'
 `
 
+
+
 for (let file of readdirSync('.')) {
-    const fullPath = path.join('./', file);
+    if (exclusions.includes(file)) {
+        continue;
+    }
+    const fullPath = join('./', file);
     const stats = statSync(fullPath);
     if (stats.isDirectory()) {
         const content = generateContent(file);
-        const fileName = path.join('./.github/workflows/', `test-and-release-${file}.yml`);
+        const fileName = join('./.github/workflows/', `test-and-release-${file}.yml`);
         console.log(`Creating ${fileName}`);
         require('fs').writeFileSync(fileName, content);
     }
