@@ -8,7 +8,7 @@
     "url": "https://github.com/ether/ether-plugins/issues"
   },
   "description": "Etherpad plugin to set left, center, right, or full justification for a paragraph",
-  "homepage": "https://github.com/ether/ep_align#readme",
+  "homepage": "https://github.com/ether/ether-plugins/tree/main/ep_align#readme",
   "keywords": [
     "etherpad",
     "plugin",
