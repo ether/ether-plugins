@@ -8,7 +8,8 @@
     "generate:pipeline": "tsx src/generate-pipeline.ts",
     "bump:node": "tsx src/updateNodeEngine.ts",
     "move:versions": "tsx src/moveVersionsToPnpmWorkspace.ts",
-    "move:links": "tsx src/changeLinksInPackageJson.ts"
+    "move:links": "tsx src/changeLinksInPackageJson.ts",
+    "delete:pnpm-lock": "tsx src/deletePnpmlockyamlsLocally.ts"
   },
   "dependencies": {
     "@package-json/types": "^0.0.11",
