@@ -1,4 +1,4 @@
-import {readdirSync,readFileSync, statSync, writeFileSync} from "node:fs";
+import {existsSync, readdirSync, readFileSync, statSync, writeFileSync} from "node:fs";
 import {exclusions} from './constants'
 import {join} from "node:path";
 import type { PackageJson } from '@package-json/types'
@@ -14,14 +14,13 @@ for (let file of readdirSync('.')) {
     const stats = statSync(fullPath);
     if (stats.isDirectory()) {
         const packageJsonPath = fullPath+ "/package.json"
-        if (statSync(fullPath+ "/package.json")) {
+        if (existsSync(fullPath+ "/package.json")) {
             const jsonObject: PackageJson = JSON.parse(readFileSync(packageJsonPath).toString())
 
             jsonObject.engines = {
                 node: ">="+currentNodeVersion
             }
-            const jsonified = JSON.stringify(jsonObject)
-            writeFileSync(packageJsonPath, jsonified)
+            writeFileSync(packageJsonPath, JSON.stringify(jsonObject, null, 2))
         }
     }
 }

@@ -17,7 +17,7 @@
     "/ep.json"
   ],
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "scripts": {
     "lint": "eslint .",
@@ -27,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ether/ep_dynamic_default_content.git"
+    "url": "https://github.com/ether/ether-plugins.git"
   },
   "keywords": [
     "etherpad",
@@ -37,14 +37,14 @@
   "author": "Richard Hansen <rhansen@rhansen.org>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/ether/ep_dynamic_default_content/issues"
+    "url": "https://github.com/ether/ether-plugins/issues"
   },
-  "homepage": "https://github.com/ether/ep_dynamic_default_content#readme",
+  "homepage": "https://github.com/ether/ether-plugins/tree/main/ep_dynamic_default_content#readme",
   "devDependencies": {
-    "eslint": "^8.57.0",
-    "eslint-config-etherpad": "^4.0.4",
-    "microbundle": "^0.15.0",
-    "typescript": "^5.4.2"
+    "eslint": "catalog:",
+    "eslint-config-etherpad": "catalog:",
+    "microbundle": "catalog:",
+    "typescript": "catalog:"
   },
   "dependencies": {
     "ajv": "^8.11.0",

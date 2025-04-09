@@ -7,13 +7,13 @@
     "etherpad",
     "plugin"
   ],
-  "homepage": "https://github.com/ether/ep_padlist2",
+  "homepage": "https://github.com/ether/ether-plugins/tree/main/ep_padlist2#readme",
   "bugs": {
-    "url": "https://github.com/ether/ep_padlist2/issues"
+    "url": "https://github.com/ether/ether-plugins/issues"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/ether/ep_padlist2.git"
+    "url": "https://github.com/ether/ether-plugins.git"
   },
   "main": "index.js",
   "license": "Apache-2.0",
@@ -22,15 +22,15 @@
     "url": "https://etherpad.org/"
   },
   "devDependencies": {
-    "eslint": "^8.57.0",
-    "eslint-config-etherpad": "^4.0.4",
-    "typescript": "^5.4.2"
+    "eslint": "catalog:",
+    "eslint-config-etherpad": "catalog:",
+    "typescript": "catalog:"
   },
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   }
 }

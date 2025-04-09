@@ -1,9 +1,9 @@
 {
   "name": "ep_announce",
-  "homepage": "https://github.com/orblivion/ep_announce#readme",
+  "homepage": "https://github.com/ether/ether-plugins/tree/main/ep_announce#readme",
   "repository": {
-    "url": "git@github.com:orblivion/ep_announce.git",
-    "type": "git"
+    "type": "git",
+    "url": "https://github.com/ether/ether-plugins.git"
   },
   "version": "0.0.28",
   "description": "Plays a chime when other users join on Etherpad",
@@ -18,7 +18,7 @@
     }
   ],
   "engines": {
-    "node": ">=12.17.0"
+    "node": ">=20.0.0"
   },
   "dependencies": {},
   "funding": {
@@ -26,12 +26,15 @@
     "url": "https://etherpad.org/"
   },
   "devDependencies": {
-    "eslint": "^8.54.0",
-    "eslint-config-etherpad": "^3.0.22",
-    "typescript": "^4.9.5"
+    "eslint": "catalog:",
+    "eslint-config-etherpad": "catalog:",
+    "typescript": "catalog:"
   },
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
+  },
+  "bugs": {
+    "url": "https://github.com/ether/ether-plugins/issues"
   }
 }

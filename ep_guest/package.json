@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ether/ep_guest.git"
+    "url": "https://github.com/ether/ether-plugins.git"
   },
   "keywords": [
     "auth",
@@ -16,9 +16,9 @@
   ],
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/ether/ep_guest/issues"
+    "url": "https://github.com/ether/ether-plugins/issues"
   },
-  "homepage": "https://github.com/ether/ep_guest#readme",
+  "homepage": "https://github.com/ether/ether-plugins/tree/main/ep_guest#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.12"
   },
@@ -27,15 +27,15 @@
     "url": "https://etherpad.org/"
   },
   "devDependencies": {
-    "eslint": "^8.57.0",
-    "eslint-config-etherpad": "^4.0.4",
-    "typescript": "^5.4.2"
+    "eslint": "catalog:",
+    "eslint-config-etherpad": "catalog:",
+    "typescript": "catalog:"
   },
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   }
 }

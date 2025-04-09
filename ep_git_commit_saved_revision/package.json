@@ -5,23 +5,27 @@
   "author": "johnyma22 (John McLear) <john@mclear.co.uk>",
   "dependencies": {},
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/JohnMcLear/ep_git_commit_saved_revision.git"
+    "url": "https://github.com/ether/ether-plugins.git"
   },
   "funding": {
     "type": "individual",
     "url": "https://etherpad.org/"
   },
   "devDependencies": {
-    "eslint": "^8.57.0",
-    "eslint-config-etherpad": "^4.0.4",
-    "typescript": "^5.4.2"
+    "eslint": "catalog:",
+    "eslint-config-etherpad": "catalog:",
+    "typescript": "catalog:"
   },
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/ether/ether-plugins/issues"
+  },
+  "homepage": "https://github.com/ether/ether-plugins/tree/main/ep_git_commit_saved_revision#readme"
 }

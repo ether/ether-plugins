@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ether/ep_openid_connect.git"
+    "url": "https://github.com/ether/ether-plugins.git"
   },
   "license": "MIT",
   "keywords": [
@@ -19,20 +19,20 @@
     "plugin"
   ],
   "bugs": {
-    "url": "https://github.com/ether/ep_openid_connect/issues"
+    "url": "https://github.com/ether/ether-plugins/issues"
   },
-  "homepage": "https://github.com/ether/ep_openid_connect#readme",
+  "homepage": "https://github.com/ether/ether-plugins/tree/main/ep_openid_connect#readme",
   "dependencies": {
     "@etherpad/node-openid-client": "npm:@jsr/etherpad__node-openid-client@^0.1.0",
     "ajv": "^8.11.0",
     "openid-client": "^5.1.5"
   },
   "devDependencies": {
-    "eslint": "^8.57.0",
-    "eslint-config-etherpad": "^4.0.4",
-    "oidc-provider": "^8.4.5",
-    "supertest": "^6.2.2",
-    "typescript": "^5.4.2"
+    "eslint": "catalog:",
+    "eslint-config-etherpad": "catalog:",
+    "oidc-provider": "catalog:",
+    "supertest": "catalog:",
+    "typescript": "catalog:"
   },
   "scripts": {
     "lint": "eslint .",
@@ -43,6 +43,6 @@
     "url": "https://etherpad.org/"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   }
 }

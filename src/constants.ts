@@ -1,7 +1,8 @@
-const exclusions = [
+export const exclusions = [
     'node_modules',
     '.github',
     'scripts',
+    '.idea',
     'dist',
     'test',
     'docs',

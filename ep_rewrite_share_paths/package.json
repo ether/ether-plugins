@@ -1,7 +1,7 @@
 {
   "name": "ep_rewrite_share_paths",
   "description": "Rewrite share path to current URL /p/ to / for non read only and do a str.replace for read only pads -- Useful for people doing reverse proxying, team & pro pads",
-  "homepage": "https://github.com/johnmclear/ep_rewrite_share_paths",
+  "homepage": "https://github.com/ether/ether-plugins/tree/main/ep_rewrite_share_paths#readme",
   "keywords": [
     "team",
     "pro",
@@ -17,17 +17,17 @@
   "version": "1.0.22",
   "repository": {
     "type": "git",
-    "url": "git://github.com/johnmclear/ep_rewrite_share_paths.git"
+    "url": "https://github.com/ether/ether-plugins.git"
   },
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^8.57.0",
-    "eslint-config-etherpad": "^4.0.4",
-    "typescript": "^5.4.2"
+    "eslint": "catalog:",
+    "eslint-config-etherpad": "catalog:",
+    "typescript": "catalog:"
   },
   "optionalDependencies": {},
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "_engineSupported": true,
   "_npmVersion": "1.1.24",
@@ -46,5 +46,8 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
+  },
+  "bugs": {
+    "url": "https://github.com/ether/ether-plugins/issues"
   }
 }

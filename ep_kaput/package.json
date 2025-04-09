@@ -4,25 +4,25 @@
     "email": "john@mclear.co.uk"
   },
   "bugs": {
-    "url": "https://github.com/ether/ep_kaput/issues"
+    "url": "https://github.com/ether/ether-plugins/issues"
   },
   "bundleDependencies": false,
   "dependencies": {},
   "deprecated": false,
   "description": "Ach Nay!  A plugin designed to break Etherpad and make Etherpad gebrokt/kaput/fubared/b0rked<script src='alert(true)'></script>>foo",
   "devDependencies": {
-    "eslint": "^8.57.0",
-    "eslint-config-etherpad": "^4.0.4",
-    "typescript": "^5.4.2"
+    "eslint": "catalog:",
+    "eslint-config-etherpad": "catalog:",
+    "typescript": "catalog:"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "funding": {
     "type": "individual",
     "url": "https://etherpad.org/"
   },
-  "homepage": "https://github.com/ether/ep_kaput#readme",
+  "homepage": "https://github.com/ether/ether-plugins/tree/main/ep_kaput#readme",
   "keywords": [
     "ep",
     "etherpad",
@@ -32,7 +32,7 @@
   "name": "ep_kaput",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ether/ep_kaput.git"
+    "url": "https://github.com/ether/ether-plugins.git"
   },
   "scripts": {
     "lint": "eslint .",

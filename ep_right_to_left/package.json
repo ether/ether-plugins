@@ -1,7 +1,7 @@
 {
   "name": "ep_right_to_left",
   "description": "Make the text inside a Pad and Chat go from right to left",
-  "homepage": "https://github.com/johnyma22/ep_right_to_left",
+  "homepage": "https://github.com/ether/ether-plugins/tree/main/ep_right_to_left#readme",
   "keywords": [
     "RTL",
     "Arabic",
@@ -17,17 +17,17 @@
   "version": "0.0.18",
   "repository": {
     "type": "git",
-    "url": "git://github.com/johnmclear/ep_right_to_left.git"
+    "url": "https://github.com/ether/ether-plugins.git"
   },
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^8.57.0",
-    "eslint-config-etherpad": "^4.0.4",
-    "typescript": "^5.4.2"
+    "eslint": "catalog:",
+    "eslint-config-etherpad": "catalog:",
+    "typescript": "catalog:"
   },
   "optionalDependencies": {},
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "_engineSupported": true,
   "_npmVersion": "1.1.24",
@@ -49,5 +49,8 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
+  },
+  "bugs": {
+    "url": "https://github.com/ether/ether-plugins/issues"
   }
 }

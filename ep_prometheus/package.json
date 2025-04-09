@@ -5,7 +5,7 @@
     "email": "john@mclear.co.uk"
   },
   "bugs": {
-    "url": "https://github.com/ether/ep_prometheus/issues"
+    "url": "https://github.com/ether/ether-plugins/issues"
   },
   "bundleDependencies": false,
   "deprecated": false,
@@ -14,7 +14,7 @@
     "type": "individual",
     "url": "https://etherpad.org/"
   },
-  "homepage": "https://github.com/ether/ep_prometheus#readme",
+  "homepage": "https://github.com/ether/ether-plugins/tree/main/ep_prometheus#readme",
   "keywords": [
     "etherpad",
     "plugin",
@@ -24,19 +24,19 @@
   "name": "ep_prometheus",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ether/ep_prometheus.git"
+    "url": "https://github.com/ether/ether-plugins.git"
   },
   "version": "0.0.20",
   "devDependencies": {
-    "eslint": "^8.57.0",
-    "eslint-config-etherpad": "^4.0.4",
-    "typescript": "^5.4.2"
+    "eslint": "catalog:",
+    "eslint-config-etherpad": "catalog:",
+    "typescript": "catalog:"
   },
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   }
 }

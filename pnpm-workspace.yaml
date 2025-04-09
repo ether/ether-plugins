@@ -1,10 +1,90 @@
 packages:
   - ep_align
+  - ep_announce
+  - ep_author_follow
+  - ep_author_hover
+  - ep_author_neat2
+  - ep_button_link
+  - ep_chat_log_join_leave
+  - ep_clear_authorship_no_prompt
+  - ep_clear_formatting
+  - ep_comments_page
+  - ep_copy_paste_select_all
+  - ep_cursortrace
+  - ep_define
+  - ep_desktop_notifications
+  - ep_disable_change_author_name
+  - ep_disable_chat
+  - ep_disable_drag_and_drop
+  - ep_disable_error_messages
+  - ep_disable_imports
+  - ep_disable_reset_authorship_colours
+  - ep_dynamic_default_content
+  - ep_email_notifications
+  - ep_embedmedia
+  - ep_file_menu_toolbar
+  - ep_font_color
+  - ep_font_family
+  - ep_font_size
+  - ep_git_commit_saved_revision
+  - ep_guest
+  - ep_hash_auth
+  - ep_headerauth
+  - ep_headings2
+  - ep_helmet
+  - ep_help_bubbles
+  - ep_hide_line_numbers
+  - ep_hide_referrer
+  - ep_infos
+  - ep_inline_toolbar
+  - ep_invite_via_email
+  - ep_kaput
+  - ep_list_pads
+  - ep_loading_message
+  - ep_mammoth
+  - ep_markdown
+  - ep_mathjax
+  - ep_mediawiki
+  - ep_monospace_default
+  - ep_oauth
+  - ep_offline_edit
+  - ep_openid_connect
+  - ep_padlist2
+  - ep_pad_activity_nofication_in_title
+  - ep_pad_title
+  - ep_performance_test_hooks
+  - ep_post_data
+  - ep_prefer_color_scheme
+  - ep_print
+  - ep_prometheus
+  - ep_prompt_for_name
+  - ep_public_view
+  - ep_real_time_chat
+  - ep_reference
+  - ep_rewrite_share_paths
+  - ep_right_to_left
+  - ep_rss
+  - ep_search
+  - ep_set_title_on_pad
+  - ep_show_whitespace
+  - ep_special_characters
+  - ep_spellcheck
+  - ep_stable_authorid
+  - ep_sticky_attributes
+  - ep_test_line_attrib
+  - ep_text_statistics
+  - ep_themes
+  - ep_timesliderdiff
 
 catalog:
-  '@types/mocha' : ^10.0.6
-  '@types/node' : ^20.12.4
-  'eslint': ^8.57.0
-  'eslint-config-etherpad': ^4.0.4
+  "@types/mocha": ^10.0.6
+  "@types/node": ^20.12.4
+  eslint: ^8.57.0
+  eslint-config-etherpad: ^4.0.4
   mocha: ^10.4.0
   typescript: ^5.4.3
+  socket.io-client: "*"
+  superagent: ^8.1.2
+  microbundle: ^0.15.0
+  oidc-provider: ^8.4.5
+  supertest: ^6.2.2

@@ -10,7 +10,7 @@
   "contributors": [],
   "dependencies": {},
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "_id": "ep_disable_change_author_name@0.0.2",
   "dist": {
@@ -33,22 +33,24 @@
   "directories": {},
   "_shasum": "7a668717f83a7027ecd5316aa44833c4cc105ee8",
   "repository": {
-    "repository": {
-      "type": "git",
-      "url": "git://github.com/johnmclear/ep_disable_change_author_name.git"
-    }
+    "type": "git",
+    "url": "https://github.com/ether/ether-plugins.git"
   },
   "funding": {
     "type": "individual",
     "url": "https://etherpad.org/"
   },
   "devDependencies": {
-    "eslint": "^8.57.0",
-    "eslint-config-etherpad": "^4.0.4",
-    "typescript": "^5.4.2"
+    "eslint": "catalog:",
+    "eslint-config-etherpad": "catalog:",
+    "typescript": "catalog:"
   },
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/ether/ether-plugins/issues"
+  },
+  "homepage": "https://github.com/ether/ether-plugins/tree/main/ep_disable_change_author_name#readme"
 }

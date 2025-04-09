@@ -1,7 +1,7 @@
 {
   "name": "ep_help_bubbles",
   "description": "Help bubbles for Etherpad Lite",
-  "homepage": "https://github.com/johnmclear/ep_help_bubbles",
+  "homepage": "https://github.com/ether/ether-plugins/tree/main/ep_help_bubbles#readme",
   "keywords": [
     "help",
     "bubbles",
@@ -17,17 +17,17 @@
   "version": "1.1.21",
   "repository": {
     "type": "git",
-    "url": "git://github.com/johnmclear/ep_help_bubbles.git"
+    "url": "https://github.com/ether/ether-plugins.git"
   },
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^8.57.0",
-    "eslint-config-etherpad": "^4.0.4",
-    "typescript": "^5.4.2"
+    "eslint": "catalog:",
+    "eslint-config-etherpad": "catalog:",
+    "typescript": "catalog:"
   },
   "optionalDependencies": {},
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "_engineSupported": true,
   "_npmVersion": "1.1.24",
@@ -46,5 +46,8 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
+  },
+  "bugs": {
+    "url": "https://github.com/ether/ether-plugins/issues"
   }
 }
