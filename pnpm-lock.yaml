@@ -722,12 +722,12 @@ importers:
 
   ep_openid_connect:
     dependencies:
-      '@etherpad/node-openid-client':
-        specifier: npm:@jsr/etherpad__node-openid-client@^0.1.0
-        version: '@jsr/etherpad__node-openid-client@0.1.0'
       ajv:
         specifier: ^8.11.0
         version: 8.17.1
+      ether-node-openid-client:
+        specifier: ^6.0.2
+        version: 6.0.2
       openid-client:
         specifier: ^5.1.5
         version: 5.7.1
@@ -1951,9 +1951,6 @@ packages:
 
   '@jsdevtools/ono@7.1.3':
     resolution: {integrity: sha512-4JQNk+3mVzK3xh2rqd6RB4J46qUR19azEHBneZyTZM+c456qOrbbM/5xcR8huNCCcbVt7+UmizG6GuUvPvKUYg==}
-
-  '@jsr/etherpad__node-openid-client@0.1.0':
-    resolution: {integrity: sha512-HPURcH7nlZ6j811lccaD/bFVCYu18UKMwEEfPJbgEu+bEUtdKqH3sX1UxQ3Mx708qYCszJHWiD9q83QtcjnVZA==, tarball: https://npm.jsr.io/~/11/@jsr/etherpad__node-openid-client/0.1.0.tgz}
 
   '@koa/cors@5.0.0':
     resolution: {integrity: sha512-x/iUDjcS90W69PryLDIMgFyV21YLTnG9zOpPXS7Bkt2b8AsY3zZsIpOLBkYr9fBcF3HbkKaER5hOBZLfpLgYNw==}
@@ -3349,6 +3346,9 @@ packages:
   etag@1.8.1:
     resolution: {integrity: sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==}
     engines: {node: '>= 0.6'}
+
+  ether-node-openid-client@6.0.2:
+    resolution: {integrity: sha512-yTv7RlglKltcbdVOcy+g4seh6G3ngAiYyENv+/OJsbBXMLzlisoCq+oyJkSiUkg//964aUjA3JLSw/YEMDc4uA==}
 
   etherpad-require-kernel@1.0.11:
     resolution: {integrity: sha512-I03bkNiBMrcsJRSl0IqotUU70s9v6VISrITj/cQgAoVQSoRFbV/NUn2fPIF4LskysTpmwlmwJqgfL2FZpAtxEw==}
@@ -7313,10 +7313,6 @@ snapshots:
 
   '@jsdevtools/ono@7.1.3': {}
 
-  '@jsr/etherpad__node-openid-client@0.1.0':
-    dependencies:
-      jose: 4.15.9
-
   '@koa/cors@5.0.0':
     dependencies:
       vary: 1.1.2
@@ -8979,6 +8975,13 @@ snapshots:
   eta@3.5.0: {}
 
   etag@1.8.1: {}
+
+  ether-node-openid-client@6.0.2:
+    dependencies:
+      jose: 4.15.9
+      lru-cache: 10.4.3
+      object-hash: 2.2.0
+      oidc-token-hash: 5.1.0
 
   etherpad-require-kernel@1.0.11: {}
 
