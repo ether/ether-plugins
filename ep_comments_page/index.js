@@ -204,7 +204,7 @@ exports.clientVars = (hook, context, cb) => {
 };
 
 exports.expressCreateServer = (hookName, args, callback) => {
-  args.app.get('/p/:pad/:rev?/comments', async (req, res) => {
+  const handlePadRevComments = async (req, res) => {
     const fields = req.query;
     // check the api key
     if (!apiUtils.validateApiKey(fields, res)) return;
@@ -222,9 +222,17 @@ exports.expressCreateServer = (hookName, args, callback) => {
     }
     if (data == null) return;
     res.json({code: 0, data});
+  }
+
+  args.app.get('/p/:pad/:rev/comments', async (req, res) => {
+   await handlePadRevComments(req, res)
   });
 
-  args.app.post('/p/:pad/:rev?/comments', async (req, res) => {
+  args.app.get('/p/:pad/comments', async (req, res) => {
+    await handlePadRevComments(req, res)
+  });
+
+  const postRevision = async (req, res)=>{
     const fields = await new Promise((resolve, reject) => {
       new Formidable().parse(req, (err, fields) => err ? reject(err) : resolve(fields));
     });
@@ -260,9 +268,18 @@ exports.expressCreateServer = (hookName, args, callback) => {
       io.to(padIdReceived).emit('pushAddComment', commentIds[i], comments[i]);
     }
     res.json({code: 0, commentIds});
+  }
+
+  args.app.post('/p/:pad/:rev/comments', async (req, res) => {
+    await postRevision(req, res);
   });
 
-  args.app.get('/p/:pad/:rev?/commentReplies', async (req, res) => {
+  args.app.post('/p/:pad/comments', async (req, res) => {
+    await postRevision(req, res);
+  });
+
+
+  const getCommentReplies = async (req, res) => {
     // it's the same thing as the formidable's fields
     const fields = req.query;
     // check the api key
@@ -282,9 +299,17 @@ exports.expressCreateServer = (hookName, args, callback) => {
     }
     if (data == null) return;
     res.json({code: 0, data});
+  }
+
+  args.app.get('/p/:pad/commentReplies', async (req, res) => {
+      await getCommentReplies(req, res);
   });
 
-  args.app.post('/p/:pad/:rev?/commentReplies', async (req, res) => {
+  args.app.get('/p/:pad/:rev/commentReplies', async (req, res) => {
+    await getCommentReplies(req, res);
+  });
+
+  const postCommentReplies = async (req, res) => {
     const fields = await new Promise((resolve, reject) => {
       new Formidable().parse(req, (err, fields) => err ? reject(err) : resolve(fields));
     });
@@ -321,6 +346,15 @@ exports.expressCreateServer = (hookName, args, callback) => {
       io.to(padIdReceived).emit('pushAddCommentReply', replyIds[i], replies[i]);
     }
     res.json({code: 0, replyIds});
+  }
+
+  args.app.post('/p/:pad/:rev/commentReplies', async (req, res) => {
+    await postCommentReplies(req, res);
   });
+
+  args.app.post('/p/:pad/commentReplies', async (req, res) => {
+    await postCommentReplies(req, res);
+  });
+
   return callback();
 };
