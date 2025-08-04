@@ -1,5 +1,5 @@
 import {join} from 'node:path';
-import {readdirSync, statSync} from "node:fs";
+import {readdirSync, statSync, writeFileSync, rmdirSync, mkdirSync} from "node:fs";
 import {exclusions} from './constants'
 
 
@@ -28,8 +28,11 @@ for (let file of readdirSync('.')) {
     const stats = statSync(fullPath);
     if (stats.isDirectory()) {
         const content = generateContent(file);
-        const fileName = join('./.github/workflows/', `test-and-release-${file}.yml`);
+        rmdirSync(join(fullPath, '.github', 'workflows'), {recursive: true});
+        mkdirSync(join(fullPath, '.github', 'workflows'), {recursive: true});
+
+        const fileName = join('.github','workflows', `test-and-release-${file}.yml`);
         console.log(`Creating ${fileName}`);
-        require('fs').writeFileSync(fileName, content);
+        writeFileSync(fileName, content);
     }
 }
