@@ -2,7 +2,7 @@
 
 const helmet = require('helmet');
 const crypto = require('crypto');
-const settings = require('ep_etherpad-lite/node/utils/Settings');
+import settings from 'ep_etherpad-lite/node/utils/Settings';
 
 exports.expressConfigure = (hookName, app, cb) => {
   app.app.use(helmet());

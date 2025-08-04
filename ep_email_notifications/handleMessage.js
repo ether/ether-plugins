@@ -3,7 +3,7 @@
 const db = require('ep_etherpad-lite/node/db/DB');
 const email = require('emailjs');
 const randomString = require('ep_etherpad-lite/static/js/pad_utils').randomString;
-const settings = require('ep_etherpad-lite/node/utils/Settings');
+import settings from 'ep_etherpad-lite/node/utils/Settings'
 const util = require('util');
 const validator = require('validator');
 

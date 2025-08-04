@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 const eejs = require('ep_etherpad-lite/node/eejs/');
-const settings = require('ep_etherpad-lite/node/utils/Settings');
+import settings from 'ep_etherpad-lite/node/utils/Settings'
 
 exports.clientVars = (hook, context, callback) => {
   if (!settings.ep_author_follow) settings.ep_author_follow = {};

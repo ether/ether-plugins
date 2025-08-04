@@ -3,7 +3,7 @@
 const log4js = require('ep_etherpad-lite/node_modules/log4js');
 const mammoth = require('mammoth');
 const fs = require('fs').promises;
-const settings = require('ep_etherpad-lite/node/utils/Settings');
+import settings from 'ep_etherpad-lite/node/utils/Settings'
 
 const logger = log4js.getLogger('ep_mammoth');
 

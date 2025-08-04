@@ -1,7 +1,7 @@
 'use strict';
 
 const eejs = require('ep_etherpad-lite/node/eejs/');
-const settings = require('ep_etherpad-lite/node/utils/Settings');
+import settings from 'ep_etherpad-lite/node/utils/Settings'
 const shared = require('./static/js/shared');
 
 exports.eejsBlock_editbarMenuLeft = (hookName, args, cb) => {

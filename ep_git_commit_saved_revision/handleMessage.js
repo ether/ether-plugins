@@ -3,7 +3,7 @@
 const padManager = require('ep_etherpad-lite/node/db/PadManager');
 const padMessageHandler = require('ep_etherpad-lite/node/handler/PadMessageHandler');
 const db = require('ep_etherpad-lite/node/db/DB').db;
-const settingsStr = require('ep_etherpad-lite/node/utils/Settings');
+import settingsStr from 'ep_etherpad-lite/node/utils/Settings'
 const exportTxt = require('ep_etherpad-lite/node/utils/ExportTxt');
 const settings = settingsStr.ep_git_commit_saved_revision;
 if (!settings) return console.error('No ep_git_commit_saved_revision settings, see the README.md');

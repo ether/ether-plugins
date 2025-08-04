@@ -1,9 +1,9 @@
 'use strict';
 
-const absolutePaths = require('ep_etherpad-lite/node/utils/AbsolutePaths');
+import * as absolutePaths from 'ep_etherpad-lite/node/utils/AbsolutePaths';
 const fs = require('fs');
 const padManager = require('ep_etherpad-lite/node/db/PadManager');
-const settings = require('ep_etherpad-lite/node/utils/Settings');
+import settings from 'ep_etherpad-lite/node/utils/Settings'
 
 // ensure we have an apiKey
 let apiKey = '';

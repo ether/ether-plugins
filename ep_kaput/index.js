@@ -1,7 +1,7 @@
 'use strict';
 
 const eejs = require('ep_etherpad-lite/node/eejs/');
-const settings = require('ep_etherpad-lite/node/utils/Settings');
+import settings from 'ep_etherpad-lite/node/utils/Settings'
 
 // Tries to include content that never existed...
 exports.eejsBlock_editbarMenuLeft = (hookName, args, callback) => {

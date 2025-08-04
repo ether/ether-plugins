@@ -2,7 +2,7 @@
 
 const $ = require('cheerio').load('');
 const commentManager = require('./commentManager');
-const settings = require('ep_etherpad-lite/node/utils/Settings');
+import settings from 'ep_etherpad-lite/node/utils/Settings'
 
 // Iterate over pad attributes to find only the comment ones
 const findAllCommentUsedOn = (pad) => {

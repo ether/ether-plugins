@@ -5,7 +5,7 @@
 const db = require('ep_etherpad-lite/node/db/DB');
 const API = require('ep_etherpad-lite/node/db/API.js');
 const email = require('emailjs');
-const settings = require('ep_etherpad-lite/node/utils/Settings');
+import settings from 'ep_etherpad-lite/node/utils/Settings'
 const util = require('util');
 
 const SMTPClient = email.SMTPClient;

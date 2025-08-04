@@ -1,6 +1,6 @@
 'use strict';
 
-const settings = require('ep_etherpad-lite/node/utils/Settings');
+import settings from 'ep_etherpad-lite/node/utils/Settings'
 
 exports.clientVars = (hook, context, callback) => {
   let realTimeChatOnByDefault;

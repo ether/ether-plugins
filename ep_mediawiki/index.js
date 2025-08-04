@@ -1,7 +1,7 @@
 'use strict';
 
 const eejs = require('ep_etherpad-lite/node/eejs');
-const settings = require('ep_etherpad-lite/node/utils/Settings');
+import settings from 'ep_etherpad-lite/node/utils/Settings'
 
 exports.eejsBlock_exportColumn = (hookName, args, cb) => {
   args.content += eejs.require('ep_mediawiki/templates/exportcolumn.html', {}, module);

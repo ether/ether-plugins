@@ -7,7 +7,7 @@ const epOpenidConnect = require('../../../../index');
 const login = require('../login');
 const padManager = require('ep_etherpad-lite/node/db/PadManager');
 const plugins = require('ep_etherpad-lite/static/js/pluginfw/plugin_defs');
-const settings = require('ep_etherpad-lite/node/utils/Settings');
+import settings from 'ep_etherpad-lite/node/utils/Settings'
 const supertest = require('supertest');
 
 describe(__filename, function () {

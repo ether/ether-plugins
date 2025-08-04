@@ -2,7 +2,7 @@
 
 const db = require('ep_etherpad-lite/node/db/DB');
 const fs = require('fs').promises;
-const settings = require('ep_etherpad-lite/node/utils/Settings');
+import settings from 'ep_etherpad-lite/node/utils/Settings'
 
 // Remove cache for this procedure
 db.db.dbSettings.cache = 0;

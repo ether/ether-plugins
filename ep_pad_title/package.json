@@ -1,7 +1,7 @@
 {
   "name": "ep_pad_title",
   "description": "Set the pad title to a static string",
-  "version": "0.0.21",
+  "version": "next",
   "author": {
     "name": "John McLear",
     "email": "john@mclear.co.uk",

@@ -2,7 +2,7 @@
 
 const API = require('ep_etherpad-lite/node/db/API.js');
 const padManager = require('ep_etherpad-lite/node/db/PadManager');
-const settings = require('ep_etherpad-lite/node/utils/Settings');
+import settings from 'ep_etherpad-lite/node/utils/Settings'
 
 if (!settings.rss) {
   settings.rss = {};

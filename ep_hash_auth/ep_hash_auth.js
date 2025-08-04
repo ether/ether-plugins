@@ -8,7 +8,7 @@
 // Made on codepad :P
 
 const fs = require('fs');
-const settings = require('ep_etherpad-lite/node/utils/Settings');
+import settings from 'ep_etherpad-lite/node/utils/Settings'
 const authorManager = require('ep_etherpad-lite/node/db/AuthorManager');
 const crypto = require('crypto');
 

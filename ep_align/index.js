@@ -2,7 +2,7 @@
 
 const eejs = require('ep_etherpad-lite/node/eejs/');
 const Changeset = require('ep_etherpad-lite/static/js/Changeset');
-const settings = require('ep_etherpad-lite/node/utils/Settings');
+import settings from 'ep_etherpad-lite/node/utils/Settings'
 
 exports.eejsBlock_editbarMenuLeft = (hookName, args, cb) => {
   if (args.renderContext.isReadOnly) return cb();

@@ -1,7 +1,7 @@
 'use strict';
 
 const db = require('ep_etherpad-lite/node/db/DB').db;
-const settings = require('ep_etherpad-lite/node/utils/Settings');
+import settings from 'ep_etherpad-lite/node/utils/Settings'
 const request = require('request');
 
 // Below two lines are not used yet but probably will be at some point
