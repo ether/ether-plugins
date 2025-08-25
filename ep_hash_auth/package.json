@@ -1,6 +1,6 @@
 {
   "name": "ep_hash_auth",
-  "version": "10.0.0",
+  "version": "10.0.1",
   "description": "Allow the use of hashed passwords in etherpad-lite.",
   "main": "ep_hash_auth.js",
   "keywords": [
@@ -18,11 +18,13 @@
     "email": "LaKing@D250.hu",
     "url": "http://D250.hu"
   },
-  "contributors": [{
-    "name": "Robin Schneider",
-    "email": "ypid@riseup.net",
-    "url": "http://github.com/ypid"
-  }],
+  "contributors": [
+    {
+      "name": "Robin Schneider",
+      "email": "ypid@riseup.net",
+      "url": "http://github.com/ypid"
+    }
+  ],
   "license": "GPL-3.0+",
   "readmeFilename": "README.md",
   "dist": {
