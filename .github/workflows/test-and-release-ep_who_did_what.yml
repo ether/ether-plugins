@@ -1,0 +1,13 @@
+name: Node.js Package
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "ep_who_did_what/**"
+
+jobs:
+  backend:
+    uses: ether/ether-pipelines/.github/workflows/test-and-release-plugins-monorepo.yml@main
+    secrets: inherit
+    with:
+       pluginDirectory: 'ep_who_did_what'

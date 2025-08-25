@@ -28,8 +28,16 @@ for (let file of readdirSync('.')) {
     const stats = statSync(fullPath);
     if (stats.isDirectory()) {
         const content = generateContent(file);
-        rmdirSync(join(fullPath, '.github', 'workflows'), {recursive: true});
-        mkdirSync(join(fullPath, '.github', 'workflows'), {recursive: true});
+        const workflowsPath = join(fullPath, '.github');
+        try {
+            if (statSync(workflowsPath).isDirectory()) {
+                rmdirSync(join(fullPath, '.github'), {recursive: true});
+            }
+        } catch (e) {
+            // Do nothing
+        }
+
+
 
         const fileName = join('.github','workflows', `test-and-release-${file}.yml`);
         console.log(`Creating ${fileName}`);
