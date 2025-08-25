@@ -14,7 +14,7 @@
     "email": "john@mclear.co.uk",
     "url": "http://mclear.co.uk"
   },
-  "version": "1.0.24",
+  "version": "1.0.25",
   "repository": {
     "type": "git",
     "url": "https://github.com/ether/ether-plugins.git"
