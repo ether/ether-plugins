@@ -1,6 +1,6 @@
 {
   "name": "ep_hash_auth",
-  "version": "10.0.1",
+  "version": "10.0.2",
   "description": "Allow the use of hashed passwords in etherpad-lite.",
   "main": "ep_hash_auth.js",
   "keywords": [
