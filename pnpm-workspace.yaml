@@ -75,6 +75,7 @@ packages:
   - ep_text_statistics
   - ep_themes
   - ep_timesliderdiff
+  - ep_who_did_what
 
 catalog:
   "@types/mocha": ^10.0.6
