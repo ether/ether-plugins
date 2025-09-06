@@ -1,7 +1,5 @@
-'use strict';
-
+import {randomString} from 'ep_etherpad-lite/static/js/pad_utils'
 const _ = require('underscore');
-const randomString = require('ep_etherpad-lite/static/js/pad_utils').randomString;
 const shared = require('./shared');
 
 exports.addTextOnClipboard = (e, ace, padInner, removeSelection, comments, replies) => {

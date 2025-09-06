@@ -1,15 +1,15 @@
-'use strict';
-
-const AttributePool = require('ep_etherpad-lite/static/js/AttributePool');
 const Changeset = require('ep_etherpad-lite/static/js/Changeset');
+import {} from 'ep_etherpad-lite/static/js/Changeset'
 const eejs = require('ep_etherpad-lite/node/eejs/');
 import settings from 'ep_etherpad-lite/node/utils/Settings'
+const padMessageHandler = require('ep_etherpad-lite/node/handler/PadMessageHandler');
+
+const apiUtils = require('./apiUtils')
+
 const {Formidable} = require('formidable');
 const commentManager = require('./commentManager');
-const apiUtils = require('./apiUtils');
 const _ = require('underscore');
-const padMessageHandler = require('ep_etherpad-lite/node/handler/PadMessageHandler');
-const readOnlyManager = require('ep_etherpad-lite/node/db/ReadOnlyManager');
+import readOnlyManager from 'ep_etherpad-lite/node/db/ReadOnlyManager'
 
 let io;
 

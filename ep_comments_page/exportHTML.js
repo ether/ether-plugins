@@ -1,5 +1,3 @@
-'use strict';
-
 const $ = require('cheerio').load('');
 const commentManager = require('./commentManager');
 import settings from 'ep_etherpad-lite/node/utils/Settings'

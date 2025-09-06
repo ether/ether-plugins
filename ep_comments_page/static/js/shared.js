@@ -1,6 +1,4 @@
-'use strict';
-
-const randomString = require('ep_etherpad-lite/static/js/pad_utils').randomString;
+import {randomString} from 'ep_etherpad-lite/static/js/pad_utils'
 
 const collectContentPre = (hookName, context, cb) => {
   const comment = /(?:^| )(c-[A-Za-z0-9]*)/.exec(context.cls);
