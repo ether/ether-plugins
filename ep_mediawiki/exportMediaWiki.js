@@ -1,5 +1,7 @@
 'use strict';
 
+import {StringAssembler} from "ep_etherpad-lite/static/js/StringAssembler";
+import {StringIterator} from "ep_etherpad-lite/static/js/StringIterator";
 const Changeset = require('ep_etherpad-lite/static/js/Changeset');
 const padManager = require('ep_etherpad-lite/node/db/PadManager');
 
@@ -42,8 +44,8 @@ const getMediaWikiFromAtext = (pad, atext) => {
     // <b>Just bold<b> <b><i>Bold and italics</i></b> <i>Just italics</i>
     // becomes
     // <b>Just bold <i>Bold and italics</i></b> <i>Just italics</i>
-    const taker = Changeset.stringIterator(text);
-    const assem = Changeset.stringAssembler();
+    const taker = new StringIterator(text);
+    const assem = new StringAssembler();
 
     const emitOpenTag = (i) => {
       if (tags[i].indexOf('>') !== -1) {
