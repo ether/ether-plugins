@@ -15,7 +15,7 @@ exports.stylesForExport = () => (
   'h2{font-size: 1.8em;}\n' +
   'h3{font-size: 1.5em;}\n' +
   'h4{font-size: 1.2em;}\n' +
-  'code{font-family: RobotoMono;}\n');
+  'code{font-family: RobotoMono, mono;}\n');
 
 const _analyzeLine = (alineAttrs, apool) => {
   let header = null;
