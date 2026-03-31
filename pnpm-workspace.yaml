@@ -71,6 +71,7 @@ packages:
   - ep_spellcheck
   - ep_stable_authorid
   - ep_sticky_attributes
+  - ep_table_of_contents
   - ep_test_line_attrib
   - ep_text_statistics
   - ep_themes
