@@ -1,0 +1,40 @@
+{
+  "name": "ep_table_of_contents",
+  "version": "0.3.100",
+  "description": "View a table of contents for your pad",
+  "author": {
+    "name": "John McLear",
+    "email": "john@mclear.co.uk",
+    "url": "http://mclear.co.uk"
+  },
+  "keywords": [
+    "ep",
+    "etherpad",
+    "plugin"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "homepage": "https://github.com/ether/ether-plugins/tree/main/ep_table_of_contents#readme",
+  "bugs": {
+    "url": "https://github.com/ether/ether-plugins/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ether/ether-plugins.git"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://etherpad.org/"
+  },
+  "devDependencies": {
+    "eslint": "catalog:",
+    "eslint-config-etherpad": "catalog:",
+    "typescript": "catalog:"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  }
+}
