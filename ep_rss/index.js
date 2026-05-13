@@ -1,8 +1,8 @@
 'use strict';
 
-const API = require('ep_etherpad-lite/node/db/API.js');
+const API = require('ep_etherpad-lite/node/db/API');
 const padManager = require('ep_etherpad-lite/node/db/PadManager');
-import settings from 'ep_etherpad-lite/node/utils/Settings'
+const settings = require('ep_etherpad-lite/node/utils/Settings');
 
 if (!settings.rss) {
   settings.rss = {};

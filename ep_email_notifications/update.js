@@ -3,9 +3,9 @@
 // Main job is to check pads periodically for activity and notify owners when
 // someone begins editing and when someone finishes.
 const db = require('ep_etherpad-lite/node/db/DB');
-const API = require('ep_etherpad-lite/node/db/API.js');
+const API = require('ep_etherpad-lite/node/db/API');
 const email = require('emailjs');
-import settings from 'ep_etherpad-lite/node/utils/Settings'
+const settings = require('ep_etherpad-lite/node/utils/Settings');
 const util = require('util');
 
 const SMTPClient = email.SMTPClient;
